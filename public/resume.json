@@ -1,0 +1,140 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Sayan Maity",
+    "label": "Software Engineer at Zamp",
+    "email": "sayan@zamp.ai",
+    "summary": "I build product surfaces for AI agents — the interfaces, the real-time plumbing underneath them, and the design systems that keep them coherent.",
+    "url": "https://sayanmaity.com",
+    "location": {
+      "city": "Bengaluru",
+      "countryCode": "IN"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/Sayan-Maity"
+      },
+      {
+        "network": "LinkedIn",
+        "url": "https://www.linkedin.com/in/sayan-maity-756b8b202"
+      },
+      {
+        "network": "npm",
+        "url": "https://www.npmjs.com/package/sayan-ui"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Zamp",
+      "position": "Software Engineer",
+      "location": "Bengaluru, India",
+      "startDate": "2025-05",
+      "highlights": [
+        "Built the Agents feature end to end, across frontend and backend: the API layer, listing with search and filter, detail pages, the creation flow, tools-access and dataset-grant management, and sharing. On the backend, added task-count endpoints, agent-aware task attribution, and permission-aware bulk actions.",
+        "Designed the real-time task system — an SSE event pipeline (parse, guard, classify, resolve, plan) feeding a normalized task-list store, so task state stays live and consistent across every surface.",
+        "Led the app-wide dark mode rollout: semantic color tokens, a refreshed palette, and a migration path that let the legacy product stay light-mode while the new product went fully themed.",
+        "Built the Playwright end-to-end test infrastructure and the staging and production auto-deploy pipelines; integrated AWS Secrets Manager; cut build times and resolved memory-pressure failures; drove supply-chain security response and added automated audit checks with Slack alerting.",
+        "Led the AG Grid to TanStack Table migration — column resizing, drag-reordering, virtualization and pinned panes — shipped as a sequenced multi-part rollout."
+      ]
+    },
+    {
+      "name": "Zamp",
+      "position": "Frontend Engineer",
+      "location": "Bengaluru, India",
+      "startDate": "2024-09",
+      "endDate": "2025-04",
+      "highlights": [
+        "Shipped Audit Trails.",
+        "Built the display-config rules engine, including column-hiding logic driven by display rules.",
+        "Added multi-dataset support and toggle-driven multi-header configuration.",
+        "Built a shared FileUploaderWrapper component adopted across the app.",
+        "Added lazy loading across multiple APIs to cut initial page load.",
+        "Shipped three to four versions of Zamp's marketing website, iterating on design and content as the product positioning evolved."
+      ]
+    },
+    {
+      "name": "Katalis.ai",
+      "position": "Frontend Developer",
+      "startDate": "2024",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "Taiyo.ai",
+      "position": "Frontend Developer",
+      "startDate": "2024",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "Listnr",
+      "position": "Frontend Developer",
+      "startDate": "2023",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "Zapit AI",
+      "position": "Frontend Developer",
+      "startDate": "2023",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "Stock Register",
+      "position": "Frontend Developer",
+      "startDate": "2023",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "Lifense",
+      "position": "Frontend Developer",
+      "startDate": "2023",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "Connectlink",
+      "position": "Frontend Developer",
+      "startDate": "2023",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "BeyondKlasses",
+      "position": "Frontend Developer",
+      "startDate": "2022",
+      "summary": "Internship / freelance frontend work."
+    },
+    {
+      "name": "Desi QnA",
+      "position": "Frontend Developer",
+      "startDate": "2022",
+      "summary": "Internship / freelance frontend work."
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Engineering and Management, Kolkata",
+      "studyType": "Bachelor of Technology",
+      "area": "Computer Science and Engineering",
+      "score": "8.5 CGPA"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend Engineering",
+      "keywords": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Zustand",
+        "Chakra UI",
+        "TanStack Table",
+        "Playwright",
+        "Node.js"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://sayanmaity.com/resume.json",
+    "version": "3.0.0"
+  }
+}

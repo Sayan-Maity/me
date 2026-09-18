@@ -1,0 +1,182 @@
+import {
+  person,
+  now,
+  experience,
+  earlier,
+  skills,
+  education,
+} from "@/lib/data";
+import { CommandPalette } from "./command-palette";
+
+export default function Page() {
+  return (
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-bg focus:px-3 focus:py-2 focus:text-accent"
+      >
+        Skip to content
+      </a>
+
+      <div className="mx-auto max-w-[68ch] px-6 py-20 sm:px-8 sm:py-28">
+        <main id="main">
+          {/* ── Header ─────────────────────────────────────────────── */}
+          <header>
+            <h1 className="text-[15px] font-medium tracking-tight">
+              {person.name}
+            </h1>
+            <p className="mt-4 text-muted">{person.tagline}</p>
+            <p className="mt-4 text-faint">
+              {person.role} at {person.company} · {person.location}
+            </p>
+          </header>
+
+          {/* ── Now ────────────────────────────────────────────────── */}
+          <Section title="Now">
+            {now.map((line) => (
+              <p key={line} className="mt-3 text-muted first:mt-0">
+                {line}
+              </p>
+            ))}
+          </Section>
+
+          {/* ── Experience ─────────────────────────────────────────── */}
+          <Section title="Experience">
+            {experience.map((job) => (
+              <div key={job.company} className="mb-10 last:mb-0">
+                <h3 className="text-[14px] font-medium">{job.company}</h3>
+                {job.roles.map((role) => (
+                  <article key={role.title} className="mt-5">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                      <h4 className="text-muted">
+                        {role.title}
+                        <span className="text-faint"> · {role.type}</span>
+                      </h4>
+                      <span className="text-faint tabular-nums">
+                        {role.dates}
+                      </span>
+                    </div>
+                    <ul className="mt-3 space-y-2">
+                      {role.highlights.map((h) => (
+                        <li key={h} className="flex gap-3 text-muted">
+                          <span aria-hidden="true" className="text-faint">
+                            —
+                          </span>
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            ))}
+
+            <h3 className="mt-12 text-[14px] font-medium">Earlier</h3>
+            <p className="mt-2 text-faint">
+              Internship and freelance frontend work, 2022—2024.
+            </p>
+            <ul className="mt-4 space-y-1.5">
+              {earlier.map((e) => (
+                <li
+                  key={e.company}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 text-muted"
+                >
+                  <span>
+                    {e.company}
+                    <span className="text-faint"> · {e.role}</span>
+                  </span>
+                  <span className="text-faint tabular-nums">{e.dates}</span>
+                </li>
+              ))}
+            </ul>
+          </Section>
+
+          {/* ── Skills ─────────────────────────────────────────────── */}
+          <Section title="Stack">
+            <p className="text-muted">{skills.join(", ")}.</p>
+          </Section>
+
+          {/* ── Contact ────────────────────────────────────────────── */}
+          <Section title="Contact">
+            <ul className="space-y-1.5">
+              <ContactLink href={`mailto:${person.email}`} label="Email">
+                {person.email}
+              </ContactLink>
+              <ContactLink href={person.links.github} label="GitHub">
+                github.com/Sayan-Maity
+              </ContactLink>
+              <ContactLink href={person.links.linkedin} label="LinkedIn">
+                linkedin.com/in/sayan-maity
+              </ContactLink>
+              <ContactLink href={person.links.resume} label="Résumé">
+                resume.pdf
+              </ContactLink>
+            </ul>
+            <p className="mt-6 text-faint">
+              {education.degree}, {education.schoolShort} — {education.grade}.
+            </p>
+          </Section>
+        </main>
+
+        <footer className="mt-20 border-t border-rule pt-6 text-faint">
+          <p>
+            Press{" "}
+            <kbd className="border border-rule px-1.5 py-0.5 text-[12px]">
+              {/* JetBrains Mono's latin subset has no U+2318; fall back to the
+                  system UI font for this one glyph rather than ship a subset. */}
+              <span className="font-sans">⌘</span>K
+            </kbd>{" "}
+            to navigate.
+          </p>
+        </footer>
+      </div>
+
+      <CommandPalette />
+    </>
+  );
+}
+
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  const id = title.toLowerCase();
+  return (
+    <section id={id} aria-labelledby={`${id}-heading`} className="mt-16">
+      <h2
+        id={`${id}-heading`}
+        className="mb-5 text-[12px] uppercase tracking-[0.18em] text-faint"
+      >
+        {title}
+      </h2>
+      {children}
+    </section>
+  );
+}
+
+function ContactLink({
+  href,
+  label,
+  children,
+}: {
+  href: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  const external = href.startsWith("http");
+  return (
+    <li className="flex flex-wrap items-baseline gap-x-4">
+      <span className="w-20 shrink-0 text-faint">{label}</span>
+      <a
+        href={href}
+        {...(external ? { rel: "me noopener", target: "_blank" } : {})}
+        className="text-muted underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+      >
+        {children}
+      </a>
+    </li>
+  );
+}

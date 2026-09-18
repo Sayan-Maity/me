@@ -1,0 +1,31 @@
+{
+  "name": "portfolio",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run generate && next build",
+    "start": "npx serve out",
+    "lint": "next lint",
+    "generate": "node --experimental-strip-types --no-warnings scripts/generate.mjs"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.1",
+    "react-dom": "19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "tailwindcss": "^4.1.13",
+    "@tailwindcss/postcss": "^4.1.13",
+    "typescript": "^5.7.2"
+  },
+  "browserslist": [
+    "chrome >= 90",
+    "edge >= 90",
+    "firefox >= 90",
+    "safari >= 15"
+  ]
+}

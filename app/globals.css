@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+/* Tailwind v4 is CSS-first: the design system lives here, not in a JS config.
+   One mono family, near-black/near-white, one accent. Nothing else. */
+@theme {
+  --color-bg: #fcfcfc;
+  --color-fg: #16161a;
+  --color-muted: #6b6b76;
+  --color-faint: #a0a0aa;
+  --color-accent: #3b5bdb;
+  --color-rule: #e6e6ea;
+
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-bg: #0e0e11;
+    --color-fg: #ededf0;
+    --color-muted: #8f8f9a;
+    --color-faint: #5c5c66;
+    --color-accent: #8ea3ff;
+    --color-rule: #232329;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
