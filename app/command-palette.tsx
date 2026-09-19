@@ -3,8 +3,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { person } from "@/lib/data";
 import { applyTheme, getTheme, nextTheme } from "@/lib/theme";
+import { Key } from "./key";
 
-type Item = { label: string; hint: string; run: () => void };
+type Item = {
+  label: string;
+  hint: string;
+  /** Render the hint as a key cap rather than plain text. */
+  isKey?: boolean;
+  run: () => void;
+};
 
 const jump = (id: string) => () =>
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -30,6 +37,7 @@ const ITEMS: Item[] = [
   {
     label: "Toggle theme",
     hint: "T",
+    isKey: true,
     run: () => applyTheme(nextTheme(getTheme())),
   },
 ];
@@ -110,7 +118,7 @@ export function CommandPalette() {
         role="dialog"
         aria-modal="true"
         aria-label="Command palette"
-        className="w-full max-w-md border border-rule bg-bg"
+        className="w-full max-w-md border border-rule bg-bg rounded-lg"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={onKeyDown}
       >
@@ -123,7 +131,7 @@ export function CommandPalette() {
           aria-controls="cmdk-list"
           className="w-full border-b border-rule bg-transparent px-4 py-3 text-fg outline-none focus-visible:outline-none placeholder:text-faint"
         />
-        <ul id="cmdk-list" role="listbox" className="max-h-72 overflow-y-auto py-1">
+        <ul id="cmdk-list" role="listbox" className="max-h-72 overflow-y-auto p-2">
           {results.length === 0 && (
             <li className="px-4 py-3 text-faint">No matches.</li>
           )}
@@ -138,12 +146,16 @@ export function CommandPalette() {
                   item.run();
                   close();
                 }}
-                className={`flex w-full items-baseline justify-between px-4 py-2 text-left ${
+                className={`flex w-full items-baseline justify-between px-4 py-2 text-left rounded-md ${
                   i === active ? "bg-rule/60 text-fg" : "text-muted"
                 }`}
               >
                 <span>{item.label}</span>
-                <span className="text-faint">{item.hint}</span>
+                {item.isKey ? (
+                  <Key>{item.hint}</Key>
+                ) : (
+                  <span className="text-faint">{item.hint}</span>
+                )}
               </button>
             </li>
           ))}
