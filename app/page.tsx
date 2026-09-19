@@ -135,14 +135,15 @@ export default function Page() {
 
         <footer className="mt-20 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-rule pt-6 text-faint">
           <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>Press</span>
             <Key>
               {/* JetBrains Mono's latin subset has no U+2318; fall back to the
                   system UI font for this one glyph rather than ship a subset. */}
               <span className="font-sans">⌘</span>K
             </Key>
-            <span>to navigate</span>
+            <span>to navigate,</span>
             <Key>T</Key>
-            <span>for theme</span>
+            <span>to change theme.</span>
           </p>
           <ThemeToggle />
         </footer>
