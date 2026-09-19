@@ -26,9 +26,12 @@ const work = [
   ),
   ...earlier.map((e) => ({
     name: e.company,
-    position: e.role,
+    position: "Frontend Developer",
+    // Only a year is known for these, and JSON Resume treats a missing
+    // endDate as "current" — so bound it to the same year.
     startDate: e.dates,
-    summary: "Internship / freelance frontend work.",
+    endDate: e.dates,
+    summary: e.note,
   })),
 ];
 
@@ -86,9 +89,9 @@ ${now.join("\n\n")}
 
 ${roleLines}
 
-Earlier: internship and freelance frontend work, 2022—2024 — ${earlier
-  .map((e) => `${e.company} (${e.dates})`)
-  .join(", ")}.
+Earlier — frontend internships and freelance work, 2022—2024:
+
+${earlier.map((e) => `- **${e.company}** (${e.dates}): ${e.note}`).join("\n")}
 
 ## Stack
 

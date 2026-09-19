@@ -74,7 +74,7 @@ export default function Page() {
 
             <h3 className="mt-12 text-[14px] font-medium">Earlier</h3>
             <p className="mt-2 text-faint">
-              Internship and freelance frontend work, 2022—2024.
+              Frontend internships and freelance work, 2022—2024.
             </p>
             <ul className="mt-4 space-y-1.5">
               {earlier.map((e) => (
@@ -84,7 +84,7 @@ export default function Page() {
                 >
                   <span>
                     {e.company}
-                    <span className="text-faint"> · {e.role}</span>
+                    <span className="text-faint"> · {e.note}</span>
                   </span>
                   <span className="text-faint tabular-nums">{e.dates}</span>
                 </li>

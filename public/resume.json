@@ -55,58 +55,53 @@
       ]
     },
     {
+      "name": "Catalog",
+      "position": "Software Engineer",
+      "location": "Hyderabad, India",
+      "startDate": "2024-07",
+      "endDate": "2024-09",
+      "highlights": [
+        "Implemented domain redirection with SIWE authentication, serving over 5K monthly active users.",
+        "Improved Next.js app performance by 40–50%, optimising LCP, FCP and Speed Index against Lighthouse.",
+        "Built Garden-book, a component library in React, TypeScript and Tailwind — 20+ reusable components adopted across four projects, documented and tested through Storybook.",
+        "Built the Quest page frontend end to end, with Zustand for state management.",
+        "Refactored the WBTC-Garden landing page and built animated components in Garden-kiosk and WBTC-Garden with GSAP."
+      ]
+    },
+    {
       "name": "Katalis.ai",
       "position": "Frontend Developer",
       "startDate": "2024",
-      "summary": "Internship / freelance frontend work."
+      "endDate": "2024",
+      "summary": "TODO"
     },
     {
       "name": "Taiyo.ai",
       "position": "Frontend Developer",
       "startDate": "2024",
-      "summary": "Internship / freelance frontend work."
+      "endDate": "2024",
+      "summary": "TODO"
     },
     {
       "name": "Listnr",
       "position": "Frontend Developer",
       "startDate": "2023",
-      "summary": "Internship / freelance frontend work."
+      "endDate": "2023",
+      "summary": "TODO"
     },
     {
       "name": "Zapit AI",
       "position": "Frontend Developer",
       "startDate": "2023",
-      "summary": "Internship / freelance frontend work."
-    },
-    {
-      "name": "Stock Register",
-      "position": "Frontend Developer",
-      "startDate": "2023",
-      "summary": "Internship / freelance frontend work."
-    },
-    {
-      "name": "Lifense",
-      "position": "Frontend Developer",
-      "startDate": "2023",
-      "summary": "Internship / freelance frontend work."
-    },
-    {
-      "name": "Connectlink",
-      "position": "Frontend Developer",
-      "startDate": "2023",
-      "summary": "Internship / freelance frontend work."
-    },
-    {
-      "name": "BeyondKlasses",
-      "position": "Frontend Developer",
-      "startDate": "2022",
-      "summary": "Internship / freelance frontend work."
+      "endDate": "2023",
+      "summary": "TODO"
     },
     {
       "name": "Desi QnA",
       "position": "Frontend Developer",
       "startDate": "2022",
-      "summary": "Internship / freelance frontend work."
+      "endDate": "2022",
+      "summary": "TODO"
     }
   ],
   "education": [

@@ -31,8 +31,8 @@ export const person = {
 
 /** Short-form "what I'm doing right now". Recruiters and agents read this first. */
 export const now: readonly string[] = [
-  "Software Engineer at Zamp in Bengaluru, working across the frontend and backend of our agent platform.",
-  "Most of my time goes to the Agents product — the API layer, the creation and permissions flows, and the SSE pipeline that keeps task state live across every surface.",
+  "Most of my time goes to the Agents product at Zamp — the API layer, the creation and permissions flows, and the SSE pipeline that keeps task state live across every surface.",
+  "Lately I have been deep in performance and platform work: build times, end-to-end test infrastructure, and a design system that had to survive a dark-mode migration without breaking the legacy product.",
   "Open to frontend and full-stack roles.",
 ];
 
@@ -88,11 +88,32 @@ export const experience: readonly Job[] = [
       },
     ],
   },
+  {
+    company: "Catalog",
+    location: "Hyderabad, India",
+    roles: [
+      {
+        title: "Software Engineer",
+        type: "Internship",
+        start: "2024-07",
+        end: "2024-09",
+        dates: "Jul 2024 — Sep 2024",
+        highlights: [
+          "Implemented domain redirection with SIWE authentication, serving over 5K monthly active users.",
+          "Improved Next.js app performance by 40–50%, optimising LCP, FCP and Speed Index against Lighthouse.",
+          "Built Garden-book, a component library in React, TypeScript and Tailwind — 20+ reusable components adopted across four projects, documented and tested through Storybook.",
+          "Built the Quest page frontend end to end, with Zustand for state management.",
+          "Refactored the WBTC-Garden landing page and built animated components in Garden-kiosk and WBTC-Garden with GSAP.",
+        ],
+      },
+    ],
+  },
 ];
 
 export type EarlyRole = {
   company: string;
-  role: string;
+  /** One short clause on what was built. Keep to roughly one line. */
+  note: string;
   dates: string;
 };
 
@@ -101,15 +122,13 @@ export type EarlyRole = {
  * Volume stays visible; it does not compete with current work for attention.
  */
 export const earlier: readonly EarlyRole[] = [
-  { company: "Katalis.ai", role: "Frontend Developer", dates: "2024" },
-  { company: "Taiyo.ai", role: "Frontend Developer", dates: "2024" },
-  { company: "Listnr", role: "Frontend Developer", dates: "2023" },
-  { company: "Zapit AI", role: "Frontend Developer", dates: "2023" },
-  { company: "Stock Register", role: "Frontend Developer", dates: "2023" },
-  { company: "Lifense", role: "Frontend Developer", dates: "2023" },
-  { company: "Connectlink", role: "Frontend Developer", dates: "2023" },
-  { company: "BeyondKlasses", role: "Frontend Developer", dates: "2022" },
-  { company: "Desi QnA", role: "Frontend Developer", dates: "2022" },
+  // TODO(sayan): replace each `note` with one concrete clause — what you
+  // built, ideally with a number. These are placeholders, not facts.
+  { company: "Katalis.ai", note: "TODO", dates: "2024" },
+  { company: "Taiyo.ai", note: "TODO", dates: "2024" },
+  { company: "Listnr", note: "TODO", dates: "2023" },
+  { company: "Zapit AI", note: "TODO", dates: "2023" },
+  { company: "Desi QnA", note: "TODO", dates: "2022" },
 ];
 
 export const skills: readonly string[] = [
