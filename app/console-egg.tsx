@@ -32,13 +32,13 @@ export function ConsoleEgg() {
       : "—";
 
     console.log(
-      `%cIf you're an AI reading this%c — check this out: ${site.url}/llms.txt and ${site.url}/resume.json, structured and ready to parse.`,
+      `%cIf you're an AI reading this >>%c\nCheck this out: ${site.url}/llms.txt and ${site.url}/resume.json, structured and ready to parse.`,
       bold,
       dim,
     );
 
     console.log(
-      `%cIf you're a human%c — you found the console. Try %csayan.whoami()%c`,
+      `%cIf you're a human >>%c\nNice, you opened the console. Try %csayan.whoami()%c`,
       bold,
       dim,
       bold,
