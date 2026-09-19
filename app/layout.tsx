@@ -66,7 +66,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={jetbrains.variable}>
+    // The inline script below adds a "light"/"dark" class to <html> before
+    // React hydrates, so the server markup and the live DOM differ by design.
+    // Without this, React reports a mismatch and may strip the class, which
+    // would flash the wrong theme.
+    <html
+      lang="en"
+      className={jetbrains.variable}
+      suppressHydrationWarning
+    >
       <head>
         {/* Runs before first paint so the saved theme is applied with no
             flash of the wrong palette. Must stay inline and blocking. */}
