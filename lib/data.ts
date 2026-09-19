@@ -156,17 +156,36 @@ export const earlier: readonly EarlyRole[] = [
   },
 ];
 
-export const skills: readonly string[] = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind CSS",
-  "Zustand",
-  "Chakra UI",
-  "TanStack Table",
-  "Playwright",
-  "Node.js",
+export type SkillGroup = { label: string; items: readonly string[] };
+
+/**
+ * Grouped for the rendered page; `skills` below flattens it for JSON-LD
+ * knowsAbout and resume.json, so the two can never drift apart.
+ */
+export const skillGroups: readonly SkillGroup[] = [
+  { label: "Core", items: ["React", "Next.js", "TypeScript", "JavaScript"] },
+  { label: "Styling", items: ["Tailwind CSS", "shadcn/ui", "CSS"] },
+  { label: "State", items: ["Zustand", "Redux", "MobX"] },
+  {
+    label: "Testing",
+    items: ["Playwright", "Selenium", "Vitest", "Storybook"],
+  },
+  { label: "Backend", items: ["Go", "Node.js"] },
+  {
+    label: "Tooling",
+    items: [
+      "Docker",
+      "Temporal",
+      "AWS S3",
+      "CloudFront",
+      "Secrets Manager",
+      "Cloudflare",
+      "GitHub Actions",
+    ],
+  },
 ];
+
+export const skills: readonly string[] = skillGroups.flatMap((g) => g.items);
 
 export const education = {
   degree: "B.Tech, Computer Science and Engineering",

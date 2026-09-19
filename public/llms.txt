@@ -40,7 +40,7 @@ Earlier — frontend internships and freelance work, 2023—24:
 
 ## Stack
 
-React, Next.js, TypeScript, Tailwind CSS, Zustand, Chakra UI, TanStack Table, Playwright, Node.js.
+React, Next.js, TypeScript, JavaScript, Tailwind CSS, shadcn/ui, CSS, Zustand, Redux, MobX, Playwright, Selenium, Vitest, Storybook, Go, Node.js, Docker, Temporal, AWS S3, CloudFront, Secrets Manager, Cloudflare, GitHub Actions.
 
 ## Education
 

@@ -3,7 +3,7 @@ import {
   now,
   experience,
   earlier,
-  skills,
+  skillGroups,
   education,
 } from "@/lib/data";
 import { CommandPalette } from "./command-palette";
@@ -108,7 +108,16 @@ export default function Page() {
 
           {/* ── Skills ─────────────────────────────────────────────── */}
           <Section title="Stack">
-            <p className="text-muted">{skills.join(", ")}.</p>
+            <ul className="space-y-2">
+              {skillGroups.map((g) => (
+                <li key={g.label} className="flex flex-wrap gap-x-4">
+                  <span className="w-20 shrink-0 text-faint">{g.label}</span>
+                  <span className="min-w-0 flex-1 text-muted">
+                    {g.items.join(", ")}
+                  </span>
+                </li>
+              ))}
+            </ul>
           </Section>
 
           {/* ── Contact ────────────────────────────────────────────── */}
