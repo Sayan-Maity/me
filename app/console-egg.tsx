@@ -45,10 +45,6 @@ export function ConsoleEgg() {
       dim,
     );
 
-    console.log(
-      `%cThis page painted in ${ms(paintMs)} and the document weighed ${transferred} over the wire. The previous version of this site shipped 3,001 bytes of <div id="root"></div> and nothing else.`,
-      dim,
-    );
 
     // Give the invitation somewhere to go.
     Object.assign(window, {
@@ -80,8 +76,8 @@ export function ConsoleEgg() {
           return "Statically exported. Nothing is fetched at runtime.";
         },
         hire: () => {
-          window.location.href = `mailto:${person.email}?subject=Hello`;
-          return `Opening ${person.email} — or just use the ⌘K palette.`;
+          window.open(person.links.linkedin, "_blank", "noopener");
+          return `Opening LinkedIn. Or email me directly: ${person.email}`;
         },
       },
     });
