@@ -88,7 +88,7 @@ const llms = `# ${person.name}
 
 ${roleLines}
 
-Earlier — frontend internships and freelance work, 2023—24:
+Previously — frontend internships and freelance work, 2023—24:
 
 ${earlier.map((e) => `- **${e.company}** (${e.dates}): ${e.note}`).join("\n")}
 

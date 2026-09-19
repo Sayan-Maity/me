@@ -77,7 +77,7 @@ export default function Page() {
               </div>
             ))}
 
-            <h3 className="mt-12 text-[15px] font-medium">Earlier</h3>
+            <h3 className="mt-12 text-[15px] font-medium">Previously</h3>
             <p className="mt-2 text-faint">
               Frontend internships and freelance work, 2023—24.
             </p>

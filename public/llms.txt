@@ -24,7 +24,7 @@
   - Built the Quest page frontend end to end, with Zustand for state management.
   - Refactored the WBTC-Garden landing page and built animated components in Garden-kiosk and WBTC-Garden with GSAP.
 
-Earlier — frontend internships and freelance work, 2023—24:
+Previously — frontend internships and freelance work, 2023—24:
 
 - **Zapit AI** (2024): Built multiple user-metrics widgets
 - **Katalis.ai** (2023—24): Integrated DALL·E + LLM generation into dashboards
