@@ -19,7 +19,7 @@ export default function Page() {
         Skip to content
       </a>
 
-      <div className="mx-auto max-w-[68ch] px-6 py-20 sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-[76ch] px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <main id="main">
           {/* ── Header ─────────────────────────────────────────────── */}
           <header>
@@ -48,7 +48,7 @@ export default function Page() {
                 <h3 className="text-[14px] font-medium">{job.company}</h3>
                 {job.roles.map((role) => (
                   <article key={role.title} className="mt-5">
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <div className="flex flex-col gap-y-0.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">
                       <h4 className="text-muted">
                         {role.title}
                         <span className="text-faint"> · {role.type}</span>
@@ -171,7 +171,7 @@ function ContactLink({
   const external = href.startsWith("http");
   return (
     <li className="flex flex-wrap items-baseline gap-x-4">
-      <span className="w-20 shrink-0 text-faint">{label}</span>
+      <span className="w-16 shrink-0 text-faint sm:w-20">{label}</span>
       <a
         href={href}
         {...(external ? { rel: "me noopener", target: "_blank" } : {})}
