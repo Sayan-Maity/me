@@ -78,11 +78,14 @@ export default function Page() {
               </div>
             ))}
 
-            <h3 className="mt-12 text-[15px] font-medium">Previously</h3>
-            <p className="mt-2 text-faint">
+          </Section>
+
+          {/* ── Previously ─────────────────────────────────────────── */}
+          <Section title="Previously">
+            <p className="-mt-1 mb-4 text-faint">
               Frontend internships and freelance work, 2023—24.
             </p>
-            <ul className="mt-4 space-y-2">
+            <ul className="space-y-2">
               {earlier.map((e) => (
                 <li key={e.company} className="flex gap-x-4 text-muted">
                   {/* Notes are written to fit one line; truncate rather than
