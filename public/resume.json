@@ -76,21 +76,21 @@
       "position": "Frontend Developer",
       "startDate": "2023—24",
       "endDate": "2023—24",
-      "summary": "DALL·E + LLM image generation, admin dashboards"
+      "summary": "Integrated DALL·E + LLM generation into dashboards"
     },
     {
       "name": "Taiyō.AI",
       "position": "Frontend Developer",
       "startDate": "2023",
       "endDate": "2023",
-      "summary": "Elasticsearch-backed pages, embedded Kibana"
+      "summary": "Built Elasticsearch-backed pages with Kibana"
     },
     {
       "name": "Listnr",
       "position": "Frontend Developer",
       "startDate": "2023",
       "endDate": "2023",
-      "summary": "40% faster page load; +30% engagement"
+      "summary": "Cut page load 40% with lazy loading across the app"
     },
     {
       "name": "Desi QnA",
@@ -104,7 +104,7 @@
       "position": "Frontend Developer",
       "startDate": "2023",
       "endDate": "2023",
-      "summary": "TODO"
+      "summary": "Built multiple user-metrics widgets"
     }
   ],
   "education": [

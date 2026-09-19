@@ -128,20 +128,20 @@ export type EarlyRole = {
  */
 export const earlier: readonly EarlyRole[] = [
   // Notes are kept to one rendered line — roughly 60 characters including
-  // the company name. Lead with the metric where there is one.
+  // the company name — and each opens with a past-tense verb.
   {
     company: "Katalis.ai",
-    note: "DALL·E + LLM image generation, admin dashboards",
+    note: "Integrated DALL·E + LLM generation into dashboards",
     dates: "2023—24",
   },
   {
     company: "Taiyō.AI",
-    note: "Elasticsearch-backed pages, embedded Kibana",
+    note: "Built Elasticsearch-backed pages with Kibana",
     dates: "2023",
   },
   {
     company: "Listnr",
-    note: "40% faster page load; +30% engagement",
+    note: "Cut page load 40% with lazy loading across the app",
     dates: "2023",
   },
   {
@@ -149,8 +149,11 @@ export const earlier: readonly EarlyRole[] = [
     note: "Taught 20+ hours of frontend curriculum",
     dates: "2023",
   },
-  // TODO(sayan): one concrete clause, ideally with a number.
-  { company: "Zapit AI", note: "TODO", dates: "2023" },
+  {
+    company: "Zapit AI",
+    note: "Built multiple user-metrics widgets",
+    dates: "2023",
+  },
 ];
 
 export const skills: readonly string[] = [
