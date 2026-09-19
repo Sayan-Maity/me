@@ -55,7 +55,7 @@ export function ConsoleEgg() {
             bold,
             dim,
           );
-          return "Try sayan.hire()";
+          return "Now try sayan.hire()";
         },
         stack: () => {
           console.table(
