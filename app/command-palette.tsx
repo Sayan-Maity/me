@@ -30,7 +30,7 @@ const ITEMS: Item[] = [
   },
   {
     label: "Toggle theme",
-    hint: "⇧⌘T",
+    hint: "T",
     run: () => applyTheme(nextTheme(getTheme())),
   },
 ];
@@ -51,18 +51,23 @@ export function CommandPalette() {
     setActive(0);
   }, []);
 
-  // Global shortcuts. Plain ⌘T cannot be used at all — browsers reserve it
-  // for "new tab". ⇧⌘T ("reopen closed tab") is also reserved, but is
-  // interceptable via preventDefault in some browsers; the palette action
-  // and the footer toggle remain the reliable paths.
+  // ⌘K opens the palette. Theme uses a plain "t" rather than a ⌘ chord:
+  // every ⌘/⇧⌘ combination around T is reserved by the browser for tab
+  // management and cannot be reliably intercepted. Plain keys are ignored
+  // while typing in a field.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!(e.metaKey || e.ctrlKey)) return;
-      const key = e.key.toLowerCase();
-      if (key === "k") {
+      // e.code is layout- and modifier-independent, unlike e.key which
+      // becomes "T" when shift is held.
+      if (e.code === "KeyK" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setIsOpen((v) => !v);
-      } else if (key === "t" && e.shiftKey) {
+        return;
+      }
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const el = e.target as HTMLElement | null;
+      if (el && (el.tagName === "INPUT" || el.isContentEditable)) return;
+      if (e.code === "KeyT") {
         e.preventDefault();
         applyTheme(nextTheme(getTheme()));
       }

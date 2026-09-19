@@ -134,14 +134,15 @@ export default function Page() {
         </main>
 
         <footer className="mt-20 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-rule pt-6 text-faint">
-          <p>
-            Press{" "}
-            <kbd className="text-[13px] text-muted">
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <Key>
               {/* JetBrains Mono's latin subset has no U+2318; fall back to the
                   system UI font for this one glyph rather than ship a subset. */}
               <span className="font-sans">⌘</span>K
-            </kbd>{" "}
-            to navigate.
+            </Key>
+            <span>to navigate</span>
+            <Key>T</Key>
+            <span>for theme</span>
           </p>
           <ThemeToggle />
         </footer>
@@ -149,6 +150,14 @@ export default function Page() {
 
       <CommandPalette />
     </>
+  );
+}
+
+function Key({ children }: { children: React.ReactNode }) {
+  return (
+    <kbd className="rounded border border-rule px-1.5 py-0.5 text-[12px] text-muted">
+      {children}
+    </kbd>
   );
 }
 
