@@ -89,14 +89,16 @@ export default function Page() {
             <p className="mt-2 text-faint">
               Frontend internships and freelance work, 2023—24.
             </p>
-            <ul className="mt-4 space-y-3">
+            <ul className="mt-4 space-y-2">
               {earlier.map((e) => (
                 <li key={e.company} className="flex gap-x-4 text-muted">
-                  <span className="min-w-0 flex-1">
+                  {/* Notes are written to fit one line; truncate rather than
+                      wrap if one ever runs long, so the year column holds. */}
+                  <span className="min-w-0 flex-1 truncate">
                     {e.company}
-                    <span className="text-faint"> · {e.note}</span>
+                    <span className="text-[13px] text-faint"> · {e.note}</span>
                   </span>
-                  <span className="shrink-0 text-faint tabular-nums">
+                  <span className="shrink-0 text-[13px] text-faint tabular-nums">
                     {e.dates}
                   </span>
                 </li>

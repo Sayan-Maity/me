@@ -32,10 +32,10 @@ Open to frontend and full-stack roles.
 
 Earlier — frontend internships and freelance work, 2023—24:
 
-- **Katalis.ai** (2023—24): Integrated DALL·E and LLM image generation; shipped user and admin dashboards with Mixpanel event analytics
-- **Taiyō.AI** (2023): Built two data-presentation pages on advanced Elasticsearch queries, with Kibana dashboards embedded in-product
-- **Listnr** (2023): Cut page load 40% with lazy loading; shipped a folder-structure feature that lifted engagement 30%
-- **Desi QnA** (2023): Wrote and taught 20+ hours of frontend curriculum — HTML, CSS, JavaScript and React
+- **Katalis.ai** (2023—24): DALL·E + LLM image generation, admin dashboards
+- **Taiyō.AI** (2023): Elasticsearch-backed pages, embedded Kibana
+- **Listnr** (2023): 40% faster page load; +30% engagement
+- **Desi QnA** (2023): Taught 20+ hours of frontend curriculum
 - **Zapit AI** (2023): TODO
 
 ## Stack

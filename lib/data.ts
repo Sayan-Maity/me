@@ -127,24 +127,26 @@ export type EarlyRole = {
  * Volume stays visible; it does not compete with current work for attention.
  */
 export const earlier: readonly EarlyRole[] = [
+  // Notes are kept to one rendered line — roughly 60 characters including
+  // the company name. Lead with the metric where there is one.
   {
     company: "Katalis.ai",
-    note: "Integrated DALL·E and LLM image generation; shipped user and admin dashboards with Mixpanel event analytics",
+    note: "DALL·E + LLM image generation, admin dashboards",
     dates: "2023—24",
   },
   {
     company: "Taiyō.AI",
-    note: "Built two data-presentation pages on advanced Elasticsearch queries, with Kibana dashboards embedded in-product",
+    note: "Elasticsearch-backed pages, embedded Kibana",
     dates: "2023",
   },
   {
     company: "Listnr",
-    note: "Cut page load 40% with lazy loading; shipped a folder-structure feature that lifted engagement 30%",
+    note: "40% faster page load; +30% engagement",
     dates: "2023",
   },
   {
     company: "Desi QnA",
-    note: "Wrote and taught 20+ hours of frontend curriculum — HTML, CSS, JavaScript and React",
+    note: "Taught 20+ hours of frontend curriculum",
     dates: "2023",
   },
   // TODO(sayan): one concrete clause, ideally with a number.
