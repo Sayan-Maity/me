@@ -8,6 +8,7 @@ import {
 import { CommandPalette } from "./command-palette";
 import { ThemeToggle } from "./theme-toggle";
 import { Key } from "./key";
+import { ConsoleEgg } from "./console-egg";
 
 export default function Page() {
   return (
@@ -149,6 +150,7 @@ export default function Page() {
       </div>
 
       <CommandPalette />
+      <ConsoleEgg />
     </>
   );
 }
