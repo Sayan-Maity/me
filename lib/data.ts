@@ -18,7 +18,7 @@ export const person = {
   role: "Software Engineer",
   company: "Zamp",
   location: "Bengaluru, India",
-  email: "sayan@zamp.ai",
+  email: "sayancr777@gmail.com",
   tagline:
     "I build product surfaces for AI agents — the interfaces, the real-time plumbing underneath them, and the design systems that keep them coherent.",
   links: {
