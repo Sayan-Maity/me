@@ -70,10 +70,16 @@ body {
   color: var(--color-bg);
 }
 
-:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 3px;
-  border-radius: 2px;
+/* In @layer base so utilities can override it — unlayered CSS outranks
+   Tailwind's utility layer. The palette input opts out: it is already the
+   focused element of a modal dialog, and the offset ring floated proud of
+   its borderless edge. */
+@layer base {
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

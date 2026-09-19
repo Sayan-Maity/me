@@ -12,7 +12,6 @@ const jump = (id: string) => () =>
 const open = (url: string) => () => window.open(url, "_blank", "noopener");
 
 const ITEMS: Item[] = [
-  { label: "Now", hint: "Section", run: jump("now") },
   { label: "Experience", hint: "Section", run: jump("experience") },
   { label: "Stack", hint: "Section", run: jump("stack") },
   { label: "Contact", hint: "Section", run: jump("contact") },
@@ -122,7 +121,7 @@ export function CommandPalette() {
           placeholder="Jump to…"
           aria-label="Search commands"
           aria-controls="cmdk-list"
-          className="w-full border-b border-rule bg-transparent px-4 py-3 text-fg outline-none placeholder:text-faint"
+          className="w-full border-b border-rule bg-transparent px-4 py-3 text-fg outline-none focus-visible:outline-none placeholder:text-faint"
         />
         <ul id="cmdk-list" role="listbox" className="max-h-72 overflow-y-auto py-1">
           {results.length === 0 && (
