@@ -10,6 +10,7 @@
   --color-accent: #2f4fd0;
   --color-rule: #e6e6ea;
   --color-grid: #e4e4e7;
+  --color-glow: #c9c9cf;
 
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 }
@@ -26,6 +27,7 @@
     --color-accent: #8ea3ff;
     --color-rule: #232329;
     --color-grid: #222225;
+    --color-glow: #3c3c44;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -37,6 +39,8 @@
       --color-accent: #8ea3ff;
       --color-rule: #232329;
       --color-grid: #222225;
+      --color-glow: #3c3c44;
+    --color-glow: #3c3c44;
     }
   }
 }
@@ -108,6 +112,43 @@ body::before {
     #000 0%,
     transparent 78%
   );
+}
+
+/* A brighter copy of the grid, revealed only within a small radius of the
+   cursor. Kept faint on purpose: bright enough to notice, well below the
+   text so it never competes for attention. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  background-image:
+    linear-gradient(to right, var(--color-glow) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-glow) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(
+    140px circle at var(--glow-x, -999px) var(--glow-y, -999px),
+    #000 0%,
+    transparent 70%
+  );
+  mask-image: radial-gradient(
+    140px circle at var(--glow-x, -999px) var(--glow-y, -999px),
+    #000 0%,
+    transparent 70%
+  );
+}
+
+html.glow-ready body::after {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
