@@ -30,7 +30,7 @@ const ITEMS: Item[] = [
   },
   {
     label: "Toggle theme",
-    hint: "light / dark / system",
+    hint: "⇧⌘T",
     run: () => applyTheme(nextTheme(getTheme())),
   },
 ];
@@ -51,12 +51,20 @@ export function CommandPalette() {
     setActive(0);
   }, []);
 
-  // Global ⌘K / Ctrl+K toggle.
+  // Global shortcuts. Plain ⌘T cannot be used at all — browsers reserve it
+  // for "new tab". ⇧⌘T ("reopen closed tab") is also reserved, but is
+  // interceptable via preventDefault in some browsers; the palette action
+  // and the footer toggle remain the reliable paths.
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey)) {
+      if (!(e.metaKey || e.ctrlKey)) return;
+      const key = e.key.toLowerCase();
+      if (key === "k") {
         e.preventDefault();
         setIsOpen((v) => !v);
+      } else if (key === "t" && e.shiftKey) {
+        e.preventDefault();
+        applyTheme(nextTheme(getTheme()));
       }
     };
     window.addEventListener("keydown", onKey);
