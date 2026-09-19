@@ -27,7 +27,7 @@ export default function Page() {
             </h1>
             <p className="mt-5 text-muted">{person.tagline}</p>
             <p className="mt-4 text-faint">
-              {person.role} · Bengaluru · Open to new roles
+              {person.role} · {person.location}
             </p>
           </header>
 
