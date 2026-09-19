@@ -13,8 +13,11 @@
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  @theme {
+/* Dark palette. Applied either by explicit choice (html.dark, set by the
+   inline script in layout.tsx) or by system preference when the user has
+   not chosen — hence both selectors. */
+@layer theme {
+  html.dark {
     --color-bg: #0e0e11;
     --color-fg: #ededf0;
     --color-muted: #8f8f9a;
@@ -22,7 +25,22 @@
     --color-accent: #8ea3ff;
     --color-rule: #232329;
   }
+
+  @media (prefers-color-scheme: dark) {
+    html:not(.light) {
+      --color-bg: #0e0e11;
+      --color-fg: #ededf0;
+      --color-muted: #8f8f9a;
+      --color-faint: #5c5c66;
+      --color-accent: #8ea3ff;
+      --color-rule: #232329;
+    }
+  }
 }
+
+/* Let the browser render form controls and scrollbars to match. */
+html.dark { color-scheme: dark; }
+html.light { color-scheme: light; }
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -38,9 +56,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Must live in @layer base: unlayered CSS outwins Tailwind's utility layer,
+   which would make `a` ignore text-colour utilities like .text-faint. */
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 ::selection {

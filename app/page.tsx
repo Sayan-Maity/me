@@ -7,6 +7,7 @@ import {
   education,
 } from "@/lib/data";
 import { CommandPalette } from "./command-palette";
+import { ThemeToggle } from "./theme-toggle";
 
 export default function Page() {
   return (
@@ -103,10 +104,10 @@ export default function Page() {
                 {person.email}
               </ContactLink>
               <ContactLink href={person.links.github} label="GitHub">
-                github.com/Sayan-Maity
+                Sayan-Maity
               </ContactLink>
               <ContactLink href={person.links.linkedin} label="LinkedIn">
-                linkedin.com/in/sayan-maity
+                sayan-maity
               </ContactLink>
               <ContactLink href={person.links.resume} label="Résumé">
                 resume.pdf
@@ -118,16 +119,17 @@ export default function Page() {
           </Section>
         </main>
 
-        <footer className="mt-20 border-t border-rule pt-6 text-faint">
+        <footer className="mt-20 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-rule pt-6 text-faint">
           <p>
             Press{" "}
-            <kbd className="border border-rule px-1.5 py-0.5 text-[12px]">
+            <kbd className="text-muted">
               {/* JetBrains Mono's latin subset has no U+2318; fall back to the
                   system UI font for this one glyph rather than ship a subset. */}
               <span className="font-sans">⌘</span>K
             </kbd>{" "}
             to navigate.
           </p>
+          <ThemeToggle />
         </footer>
       </div>
 
@@ -173,7 +175,7 @@ function ContactLink({
       <a
         href={href}
         {...(external ? { rel: "me noopener", target: "_blank" } : {})}
-        className="text-muted underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+        className="text-faint transition-colors hover:text-accent"
       >
         {children}
       </a>

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { person } from "@/lib/data";
+import { applyTheme, getTheme, nextTheme } from "@/lib/theme";
 
 type Item = { label: string; hint: string; run: () => void };
 
@@ -26,6 +27,11 @@ const ITEMS: Item[] = [
     label: "Résumé",
     hint: "PDF",
     run: () => window.open(person.links.resume, "_blank", "noopener"),
+  },
+  {
+    label: "Toggle theme",
+    hint: "light / dark / system",
+    run: () => applyTheme(nextTheme(getTheme())),
   },
 ];
 

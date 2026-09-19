@@ -62,6 +62,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <head>
+        {/* Runs before first paint so the saved theme is applied with no
+            flash of the wrong palette. Must stay inline and blocking. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.classList.add(t)}}catch(e){}})()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildGraph()) }}
