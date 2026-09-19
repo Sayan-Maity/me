@@ -9,6 +9,7 @@
   --color-faint: #70707b;
   --color-accent: #2f4fd0;
   --color-rule: #e6e6ea;
+  --color-grid: #e4e4e7;
 
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 }
@@ -24,6 +25,7 @@
     --color-faint: #84848f;
     --color-accent: #8ea3ff;
     --color-rule: #232329;
+    --color-grid: #222225;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -34,6 +36,7 @@
       --color-faint: #84848f;
       --color-accent: #8ea3ff;
       --color-rule: #232329;
+      --color-grid: #222225;
     }
   }
 }
@@ -80,6 +83,31 @@ body {
     outline-offset: 3px;
     border-radius: 2px;
   }
+}
+
+/* Background grid. Pure CSS — two repeating gradients, no image request,
+   no extra bytes over the wire. The radial mask fades it out toward the
+   edges so it never competes with the text. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 42%,
+    #000 0%,
+    transparent 78%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 42%,
+    #000 0%,
+    transparent 78%
+  );
 }
 
 @media (prefers-reduced-motion: reduce) {
