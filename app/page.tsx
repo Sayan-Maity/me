@@ -87,19 +87,18 @@ export default function Page() {
 
             <h3 className="mt-12 text-[15px] font-medium">Earlier</h3>
             <p className="mt-2 text-faint">
-              Frontend internships and freelance work, 2022—2024.
+              Frontend internships and freelance work, 2023—24.
             </p>
-            <ul className="mt-4 space-y-1.5">
+            <ul className="mt-4 space-y-3">
               {earlier.map((e) => (
-                <li
-                  key={e.company}
-                  className="flex flex-wrap items-baseline justify-between gap-x-4 text-muted"
-                >
-                  <span>
+                <li key={e.company} className="flex gap-x-4 text-muted">
+                  <span className="min-w-0 flex-1">
                     {e.company}
                     <span className="text-faint"> · {e.note}</span>
                   </span>
-                  <span className="text-faint tabular-nums">{e.dates}</span>
+                  <span className="shrink-0 text-faint tabular-nums">
+                    {e.dates}
+                  </span>
                 </li>
               ))}
             </ul>

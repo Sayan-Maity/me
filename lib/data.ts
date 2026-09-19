@@ -92,8 +92,8 @@ export const experience: readonly Job[] = [
     ],
   },
   {
-    company: "Catalog",
-    // Catalog rebranded to Garden; the site now lives at garden.finance.
+    company: "Hashira",
+    // Hashira rebranded to Garden; the site now lives at garden.finance.
     url: "https://garden.finance",
     location: "Hyderabad, India",
     roles: [
@@ -127,13 +127,28 @@ export type EarlyRole = {
  * Volume stays visible; it does not compete with current work for attention.
  */
 export const earlier: readonly EarlyRole[] = [
-  // TODO(sayan): replace each `note` with one concrete clause — what you
-  // built, ideally with a number. These are placeholders, not facts.
-  { company: "Katalis.ai", note: "TODO", dates: "2024" },
-  { company: "Taiyo.ai", note: "TODO", dates: "2024" },
-  { company: "Listnr", note: "TODO", dates: "2023" },
+  {
+    company: "Katalis.ai",
+    note: "Integrated DALL·E and LLM image generation; shipped user and admin dashboards with Mixpanel event analytics",
+    dates: "2023—24",
+  },
+  {
+    company: "Taiyō.AI",
+    note: "Built two data-presentation pages on advanced Elasticsearch queries, with Kibana dashboards embedded in-product",
+    dates: "2023",
+  },
+  {
+    company: "Listnr",
+    note: "Cut page load 40% with lazy loading; shipped a folder-structure feature that lifted engagement 30%",
+    dates: "2023",
+  },
+  {
+    company: "Desi QnA",
+    note: "Wrote and taught 20+ hours of frontend curriculum — HTML, CSS, JavaScript and React",
+    dates: "2023",
+  },
+  // TODO(sayan): one concrete clause, ideally with a number.
   { company: "Zapit AI", note: "TODO", dates: "2023" },
-  { company: "Desi QnA", note: "TODO", dates: "2022" },
 ];
 
 export const skills: readonly string[] = [

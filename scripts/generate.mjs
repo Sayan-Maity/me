@@ -90,7 +90,7 @@ ${now.join("\n\n")}
 
 ${roleLines}
 
-Earlier — frontend internships and freelance work, 2022—2024:
+Earlier — frontend internships and freelance work, 2023—24:
 
 ${earlier.map((e) => `- **${e.company}** (${e.dates}): ${e.note}`).join("\n")}
 

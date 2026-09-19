@@ -57,7 +57,7 @@
       ]
     },
     {
-      "name": "Catalog",
+      "name": "Hashira",
       "url": "https://garden.finance",
       "position": "Software Engineer",
       "location": "Hyderabad, India",
@@ -74,36 +74,36 @@
     {
       "name": "Katalis.ai",
       "position": "Frontend Developer",
-      "startDate": "2024",
-      "endDate": "2024",
-      "summary": "TODO"
+      "startDate": "2023—24",
+      "endDate": "2023—24",
+      "summary": "Integrated DALL·E and LLM image generation; shipped user and admin dashboards with Mixpanel event analytics"
     },
     {
-      "name": "Taiyo.ai",
+      "name": "Taiyō.AI",
       "position": "Frontend Developer",
-      "startDate": "2024",
-      "endDate": "2024",
-      "summary": "TODO"
+      "startDate": "2023",
+      "endDate": "2023",
+      "summary": "Built two data-presentation pages on advanced Elasticsearch queries, with Kibana dashboards embedded in-product"
     },
     {
       "name": "Listnr",
       "position": "Frontend Developer",
       "startDate": "2023",
       "endDate": "2023",
-      "summary": "TODO"
+      "summary": "Cut page load 40% with lazy loading; shipped a folder-structure feature that lifted engagement 30%"
+    },
+    {
+      "name": "Desi QnA",
+      "position": "Frontend Developer",
+      "startDate": "2023",
+      "endDate": "2023",
+      "summary": "Wrote and taught 20+ hours of frontend curriculum — HTML, CSS, JavaScript and React"
     },
     {
       "name": "Zapit AI",
       "position": "Frontend Developer",
       "startDate": "2023",
       "endDate": "2023",
-      "summary": "TODO"
-    },
-    {
-      "name": "Desi QnA",
-      "position": "Frontend Developer",
-      "startDate": "2022",
-      "endDate": "2022",
       "summary": "TODO"
     }
   ],

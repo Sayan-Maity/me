@@ -23,20 +23,20 @@ Open to frontend and full-stack roles.
   - Built a shared FileUploaderWrapper component adopted across the app.
   - Added lazy loading across multiple APIs to cut initial page load.
   - Shipped three to four versions of Zamp's marketing website, iterating on design and content as the product positioning evolved.
-- **Software Engineer, Catalog** (Jul 2024 — Sep 2024)
+- **Software Engineer, Hashira** (Jul 2024 — Sep 2024)
   - Implemented domain redirection with SIWE authentication, serving over 5K monthly active users.
   - Improved Next.js app performance by 40–50%, optimising LCP, FCP and Speed Index against Lighthouse.
   - Built Garden-book, a component library in React, TypeScript and Tailwind — 20+ reusable components adopted across four projects, documented and tested through Storybook.
   - Built the Quest page frontend end to end, with Zustand for state management.
   - Refactored the WBTC-Garden landing page and built animated components in Garden-kiosk and WBTC-Garden with GSAP.
 
-Earlier — frontend internships and freelance work, 2022—2024:
+Earlier — frontend internships and freelance work, 2023—24:
 
-- **Katalis.ai** (2024): TODO
-- **Taiyo.ai** (2024): TODO
-- **Listnr** (2023): TODO
+- **Katalis.ai** (2023—24): Integrated DALL·E and LLM image generation; shipped user and admin dashboards with Mixpanel event analytics
+- **Taiyō.AI** (2023): Built two data-presentation pages on advanced Elasticsearch queries, with Kibana dashboards embedded in-product
+- **Listnr** (2023): Cut page load 40% with lazy loading; shipped a folder-structure feature that lifted engagement 30%
+- **Desi QnA** (2023): Wrote and taught 20+ hours of frontend curriculum — HTML, CSS, JavaScript and React
 - **Zapit AI** (2023): TODO
-- **Desi QnA** (2022): TODO
 
 ## Stack
 
