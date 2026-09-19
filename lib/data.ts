@@ -127,8 +127,13 @@ export type EarlyRole = {
  * Volume stays visible; it does not compete with current work for attention.
  */
 export const earlier: readonly EarlyRole[] = [
-  // Notes are kept to one rendered line — roughly 60 characters including
-  // the company name — and each opens with a past-tense verb.
+  // Newest first. Notes are kept to one rendered line — roughly 60
+  // characters including the company name — and each opens with a verb.
+  {
+    company: "Zapit AI",
+    note: "Built multiple user-metrics widgets",
+    dates: "2024",
+  },
   {
     company: "Katalis.ai",
     note: "Integrated DALL·E + LLM generation into dashboards",
@@ -147,11 +152,6 @@ export const earlier: readonly EarlyRole[] = [
   {
     company: "Desi QnA",
     note: "Taught 20+ hours of frontend curriculum",
-    dates: "2023",
-  },
-  {
-    company: "Zapit AI",
-    note: "Built multiple user-metrics widgets",
     dates: "2023",
   },
 ];

@@ -32,11 +32,11 @@ Open to frontend and full-stack roles.
 
 Earlier — frontend internships and freelance work, 2023—24:
 
+- **Zapit AI** (2024): Built multiple user-metrics widgets
 - **Katalis.ai** (2023—24): Integrated DALL·E + LLM generation into dashboards
 - **Taiyō.AI** (2023): Built Elasticsearch-backed pages with Kibana
 - **Listnr** (2023): Cut page load 40% with lazy loading across the app
 - **Desi QnA** (2023): Taught 20+ hours of frontend curriculum
-- **Zapit AI** (2023): Built multiple user-metrics widgets
 
 ## Stack
 

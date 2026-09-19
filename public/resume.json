@@ -72,6 +72,13 @@
       ]
     },
     {
+      "name": "Zapit AI",
+      "position": "Frontend Developer",
+      "startDate": "2024",
+      "endDate": "2024",
+      "summary": "Built multiple user-metrics widgets"
+    },
+    {
       "name": "Katalis.ai",
       "position": "Frontend Developer",
       "startDate": "2023—24",
@@ -98,13 +105,6 @@
       "startDate": "2023",
       "endDate": "2023",
       "summary": "Taught 20+ hours of frontend curriculum"
-    },
-    {
-      "name": "Zapit AI",
-      "position": "Frontend Developer",
-      "startDate": "2023",
-      "endDate": "2023",
-      "summary": "Built multiple user-metrics widgets"
     }
   ],
   "education": [
