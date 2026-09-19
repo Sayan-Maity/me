@@ -10,7 +10,7 @@
   --color-accent: #2f4fd0;
   --color-rule: #e6e6ea;
   --color-grid: #e4e4e7;
-  --color-glow: #2f4fd0aa;
+  --color-glow: #c9c9cf;
 
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 }
@@ -27,7 +27,7 @@
     --color-accent: #8ea3ff;
     --color-rule: #232329;
     --color-grid: #222225;
-    --color-glow: #8ea3ff99;
+    --color-glow: #3c3c44;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -39,7 +39,7 @@
       --color-accent: #8ea3ff;
       --color-rule: #232329;
       --color-grid: #222225;
-      --color-glow: #8ea3ff99;
+      --color-glow: #3c3c44;
     }
   }
 }
