@@ -81,10 +81,10 @@ export default function Page() {
           </Section>
 
           {/* ── Previously ─────────────────────────────────────────── */}
-          <Section title="Previously">
-            <p className="-mt-1 mb-4 text-faint">
-              Frontend internships and freelance work, 2023—24.
-            </p>
+          <Section
+            title="Previously"
+            note="internships and freelance, 2023—24"
+          >
             <ul className="space-y-2">
               {earlier.map((e) => (
                 <li key={e.company} className="flex gap-x-4 text-muted">
@@ -160,9 +160,13 @@ export default function Page() {
 
 function Section({
   title,
+  note,
   children,
 }: {
   title: string;
+  /** Optional annotation, set beside the heading rather than below it so
+      the section still opens straight into its content. */
+  note?: string;
   children: React.ReactNode;
 }) {
   const id = title.toLowerCase();
@@ -170,9 +174,14 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="mt-16">
       <h2
         id={`${id}-heading`}
-        className="mb-5 text-[13px] uppercase tracking-[0.2em] text-faint"
+        className="mb-5 flex flex-wrap items-baseline gap-x-3 text-[13px] uppercase tracking-[0.2em] text-faint"
       >
         {title}
+        {note && (
+          <span className="text-[12px] normal-case tracking-normal text-faint/70">
+            {note}
+          </span>
+        )}
       </h2>
       {children}
     </section>
