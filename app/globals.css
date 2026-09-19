@@ -5,9 +5,9 @@
 @theme {
   --color-bg: #fcfcfc;
   --color-fg: #16161a;
-  --color-muted: #6b6b76;
-  --color-faint: #a0a0aa;
-  --color-accent: #3b5bdb;
+  --color-muted: #4a4a55;
+  --color-faint: #70707b;
+  --color-accent: #2f4fd0;
   --color-rule: #e6e6ea;
 
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
@@ -20,8 +20,8 @@
   html.dark {
     --color-bg: #0e0e11;
     --color-fg: #ededf0;
-    --color-muted: #8f8f9a;
-    --color-faint: #5c5c66;
+    --color-muted: #a8a8b3;
+    --color-faint: #84848f;
     --color-accent: #8ea3ff;
     --color-rule: #232329;
   }
@@ -30,8 +30,8 @@
     html:not(.light) {
       --color-bg: #0e0e11;
       --color-fg: #ededf0;
-      --color-muted: #8f8f9a;
-      --color-faint: #5c5c66;
+      --color-muted: #a8a8b3;
+      --color-faint: #84848f;
       --color-accent: #8ea3ff;
       --color-rule: #232329;
     }
