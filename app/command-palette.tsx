@@ -153,7 +153,9 @@ export function CommandPalette() {
               >
                 <span>{item.label}</span>
                 {item.isKey ? (
-                  <Key>{item.hint}</Key>
+                  <span className="flex items-center gap-x-2 text-faint">
+                    press <Key>{item.hint}</Key>
+                  </span>
                 ) : (
                   <span className="text-faint">{item.hint}</span>
                 )}
