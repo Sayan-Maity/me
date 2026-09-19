@@ -8,7 +8,6 @@ import { CommandPalette } from "./command-palette";
 import { ThemeToggle } from "./theme-toggle";
 import { Key } from "./key";
 import { ConsoleEgg } from "./console-egg";
-import { CursorGlow } from "./cursor-glow";
 
 export default function Page() {
   return (
@@ -151,7 +150,6 @@ export default function Page() {
 
       <CommandPalette />
       <ConsoleEgg />
-      <CursorGlow />
     </>
   );
 }
