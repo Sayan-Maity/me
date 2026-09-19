@@ -8,7 +8,7 @@
 
 export const site = {
   url: "https://sayanmaity.com",
-  title: "Sayan Maity — Frontend Engineer",
+  title: "Sayan Maity",
   description:
     "Sayan Maity is a frontend engineer at Zamp in Bengaluru, building agent platforms, real-time systems and design systems with React, Next.js and TypeScript.",
 } as const;

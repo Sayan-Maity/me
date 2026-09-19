@@ -23,6 +23,10 @@ export const metadata: Metadata = {
   title: site.title,
   description: site.description,
   alternates: { canonical: "/" },
+  icons: {
+    icon: [{ url: "/icon-32.png", sizes: "32x32", type: "image/png" }],
+    apple: [{ url: "/icon-180.png", sizes: "180x180" }],
+  },
   authors: [{ name: person.name, url: site.url }],
   creator: person.name,
   keywords: [
@@ -41,11 +45,13 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.title,
     locale: "en_US",
+    images: [{ url: "/sayan.png", width: 1280, height: 1280, alt: person.name }],
   },
   twitter: {
     card: "summary",
     title: site.title,
     description: site.description,
+    images: ["/sayan.png"],
   },
   robots: {
     index: true,
