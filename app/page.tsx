@@ -23,10 +23,10 @@ export default function Page() {
         <main id="main">
           {/* ── Header ─────────────────────────────────────────────── */}
           <header>
-            <h1 className="text-[15px] font-medium tracking-tight">
+            <h1 className="text-[24px] font-medium tracking-tight">
               {person.name}
             </h1>
-            <p className="mt-4 text-muted">{person.tagline}</p>
+            <p className="mt-5 text-muted">{person.tagline}</p>
             <p className="mt-4 text-faint">
               {person.role} at {person.company} · {person.location}
             </p>
@@ -45,7 +45,7 @@ export default function Page() {
           <Section title="Experience">
             {experience.map((job) => (
               <div key={job.company} className="mb-10 last:mb-0">
-                <h3 className="text-[14px] font-medium">
+                <h3 className="text-[15px] font-medium">
                   {job.url ? (
                     <a
                       href={job.url}
@@ -85,7 +85,7 @@ export default function Page() {
               </div>
             ))}
 
-            <h3 className="mt-12 text-[14px] font-medium">Earlier</h3>
+            <h3 className="mt-12 text-[15px] font-medium">Earlier</h3>
             <p className="mt-2 text-faint">
               Frontend internships and freelance work, 2022—2024.
             </p>
@@ -135,7 +135,7 @@ export default function Page() {
         <footer className="mt-20 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-rule pt-6 text-faint">
           <p>
             Press{" "}
-            <kbd className="text-muted">
+            <kbd className="text-[13px] text-muted">
               {/* JetBrains Mono's latin subset has no U+2318; fall back to the
                   system UI font for this one glyph rather than ship a subset. */}
               <span className="font-sans">⌘</span>K
@@ -163,7 +163,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="mt-16">
       <h2
         id={`${id}-heading`}
-        className="mb-5 text-[12px] uppercase tracking-[0.18em] text-faint"
+        className="mb-5 text-[13px] uppercase tracking-[0.2em] text-faint"
       >
         {title}
       </h2>
