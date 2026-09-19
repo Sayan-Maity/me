@@ -26,7 +26,7 @@ export const person = {
     "I build the product surfaces people use AI agents through. The interfaces, the real time systems that keep them fast, and the design that makes them feel considered.",
   links: {
     github: "https://github.com/Sayan-Maity",
-    linkedin: "https://www.linkedin.com/in/sayan-maity-756b8b202",
+    linkedin: "https://www.linkedin.com/in/sayan-maity-cr7",
     npm: "https://www.npmjs.com/package/sayan-ui",
     resume: "/resume.pdf",
   },

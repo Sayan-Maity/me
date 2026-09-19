@@ -45,7 +45,7 @@ B.Tech, Computer Science and Engineering, University of Engineering and Manageme
 - [Résumé (JSON)](https://sayanmaity.com/resume.json): machine-readable résumé, JSON Resume schema v1.0.0.
 - [Résumé (PDF)](https://sayanmaity.com/resume.pdf): human-readable résumé.
 - [GitHub](https://github.com/Sayan-Maity): source code and open-source work.
-- [LinkedIn](https://www.linkedin.com/in/sayan-maity-756b8b202): professional profile.
+- [LinkedIn](https://www.linkedin.com/in/sayan-maity-cr7): professional profile.
 - [npm](https://www.npmjs.com/package/sayan-ui): published packages.
 
 ## Contact
