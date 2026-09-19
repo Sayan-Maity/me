@@ -3,7 +3,6 @@ import {
   experience,
   earlier,
   skillGroups,
-  education,
 } from "@/lib/data";
 import { CommandPalette } from "./command-palette";
 import { ThemeToggle } from "./theme-toggle";
@@ -132,9 +131,6 @@ export default function Page() {
                 resume.pdf
               </ContactLink>
             </ul>
-            <p className="mt-6 text-faint">
-              {education.degree}, {education.schoolShort} — {education.grade}.
-            </p>
           </Section>
         </main>
 
