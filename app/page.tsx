@@ -45,7 +45,20 @@ export default function Page() {
           <Section title="Experience">
             {experience.map((job) => (
               <div key={job.company} className="mb-10 last:mb-0">
-                <h3 className="text-[14px] font-medium">{job.company}</h3>
+                <h3 className="text-[14px] font-medium">
+                  {job.url ? (
+                    <a
+                      href={job.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-accent"
+                    >
+                      {job.company}
+                    </a>
+                  ) : (
+                    job.company
+                  )}
+                </h3>
                 {job.roles.map((role) => (
                   <article key={role.title} className="mt-5">
                     <div className="flex flex-col gap-y-0.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-4">

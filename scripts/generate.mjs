@@ -17,6 +17,7 @@ const work = [
   ...experience.flatMap((job) =>
     job.roles.map((role) => ({
       name: job.company,
+      ...(job.url ? { url: job.url } : {}),
       position: role.title,
       location: job.location,
       startDate: role.start,

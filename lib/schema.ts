@@ -26,6 +26,7 @@ export function buildGraph() {
         worksFor: {
           "@type": "Organization",
           name: person.company,
+          ...(experience[0].url ? { url: experience[0].url } : {}),
         },
         alumniOf: {
           "@type": "CollegeOrUniversity",

@@ -47,6 +47,8 @@ export type Role = {
 
 export type Job = {
   company: string;
+  /** Company site. Rendered as a link on the heading and used for JSON-LD. */
+  url?: string;
   location?: string;
   roles: readonly Role[];
 };
@@ -55,6 +57,7 @@ export type Job = {
 export const experience: readonly Job[] = [
   {
     company: "Zamp",
+    url: "https://www.zamp.ai",
     location: "Bengaluru, India",
     roles: [
       {
@@ -90,6 +93,8 @@ export const experience: readonly Job[] = [
   },
   {
     company: "Catalog",
+    // Catalog rebranded to Garden; the site now lives at garden.finance.
+    url: "https://garden.finance",
     location: "Hyderabad, India",
     roles: [
       {
