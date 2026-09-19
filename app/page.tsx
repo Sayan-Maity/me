@@ -141,9 +141,7 @@ export default function Page() {
                   system UI font for this one glyph rather than ship a subset. */}
               <span className="font-sans">⌘</span>K
             </Key>
-            <span>to navigate,</span>
-            <Key>T</Key>
-            <span>to change theme.</span>
+            <span>to navigate.</span>
           </p>
           <ThemeToggle />
         </footer>
