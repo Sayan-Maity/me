@@ -25,6 +25,7 @@ export default function Page() {
             <h1 className="text-[24px] font-medium tracking-tight">
               {person.name}
             </h1>
+            <p className="mt-1 text-[13px] text-faint">{person.aka}</p>
             <p className="mt-5 text-muted">{person.tagline}</p>
             <p className="mt-4 text-faint">
               {person.role} · {person.location}

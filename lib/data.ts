@@ -19,6 +19,9 @@ export const person = {
   company: "Zamp",
   location: "Bengaluru, India",
   email: "sayancr777@gmail.com",
+  /** Rendered under the name. Deliberately not part of the JSON-LD `name`
+      field — agents should get "Sayan Maity" clean. */
+  aka: "(people call me syooooon)",
   tagline:
     "I build the product surfaces people use AI agents through. The interfaces, the real time systems that keep them fast, and the design that makes them feel considered.",
   links: {
