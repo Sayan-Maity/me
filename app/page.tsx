@@ -178,7 +178,7 @@ function Section({
       >
         {title}
         {note && (
-          <span className="text-[12px] normal-case tracking-normal text-faint/70">
+          <span className="text-[13px] normal-case tracking-normal text-faint/70">
             ({note})
           </span>
         )}
