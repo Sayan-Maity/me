@@ -9,7 +9,7 @@ import { dirname, join } from "node:path";
 
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const { site, person, now, experience, earlier, skills, education } =
+const { site, person, experience, earlier, skills, education } =
   await import("../lib/data.ts");
 
 /* ── /resume.json — JSON Resume schema v1.0.0 ────────────────────── */
@@ -83,8 +83,6 @@ const roleLines = experience
 const llms = `# ${person.name}
 
 > ${person.role} at ${person.company} in ${person.location}. ${person.tagline}
-
-${now.join("\n\n")}
 
 ## Experience
 

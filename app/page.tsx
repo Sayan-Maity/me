@@ -1,6 +1,5 @@
 import {
   person,
-  now,
   experience,
   earlier,
   skillGroups,
@@ -28,18 +27,9 @@ export default function Page() {
             </h1>
             <p className="mt-5 text-muted">{person.tagline}</p>
             <p className="mt-4 text-faint">
-              {person.role} at {person.company} · {person.location}
+              {person.role} · Bengaluru · Open to new roles
             </p>
           </header>
-
-          {/* ── Now ────────────────────────────────────────────────── */}
-          <Section title="Now">
-            {now.map((line) => (
-              <p key={line} className="mt-3 text-muted first:mt-0">
-                {line}
-              </p>
-            ))}
-          </Section>
 
           {/* ── Experience ─────────────────────────────────────────── */}
           <Section title="Experience">

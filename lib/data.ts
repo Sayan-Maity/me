@@ -20,7 +20,7 @@ export const person = {
   location: "Bengaluru, India",
   email: "sayancr777@gmail.com",
   tagline:
-    "I build product surfaces for AI agents — the interfaces, the real-time plumbing underneath them, and the design systems that keep them coherent.",
+    "I build the product surfaces people use AI agents through. The interfaces, the real time systems that keep them fast, and the design that makes them feel considered.",
   links: {
     github: "https://github.com/Sayan-Maity",
     linkedin: "https://www.linkedin.com/in/sayan-maity-756b8b202",
@@ -28,13 +28,6 @@ export const person = {
     resume: "/resume.pdf",
   },
 } as const;
-
-/** Short-form "what I'm doing right now". Recruiters and agents read this first. */
-export const now: readonly string[] = [
-  "Most of my time goes to the Agents product at Zamp — the API layer, the creation and permissions flows, and the SSE pipeline that keeps task state live across every surface.",
-  "Lately I have been deep in performance and platform work: build times, end-to-end test infrastructure, and a design system that had to survive a dark-mode migration without breaking the legacy product.",
-  "Open to frontend and full-stack roles.",
-];
 
 export type Role = {
   title: string;

@@ -1,12 +1,6 @@
 # Sayan Maity
 
-> Software Engineer at Zamp in Bengaluru, India. I build product surfaces for AI agents — the interfaces, the real-time plumbing underneath them, and the design systems that keep them coherent.
-
-Most of my time goes to the Agents product at Zamp — the API layer, the creation and permissions flows, and the SSE pipeline that keeps task state live across every surface.
-
-Lately I have been deep in performance and platform work: build times, end-to-end test infrastructure, and a design system that had to survive a dark-mode migration without breaking the legacy product.
-
-Open to frontend and full-stack roles.
+> Software Engineer at Zamp in Bengaluru, India. I build the product surfaces people use AI agents through. The interfaces, the real time systems that keep them fast, and the design that makes them feel considered.
 
 ## Experience
 
