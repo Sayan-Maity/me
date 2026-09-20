@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { person, site, skillGroups } from "@/lib/data";
+import { person, site, skillGroups } from "@/shared/constants/content.constants";
 
 /**
  * Console easter egg. Runs after paint, costs nothing render-blocking, and

@@ -5,7 +5,7 @@ import {
   skills,
   education,
   achievements,
-} from "./data";
+} from "@/shared/constants/content.constants";
 
 /**
  * JSON-LD @graph. Derived entirely from lib/data.ts so it can never drift

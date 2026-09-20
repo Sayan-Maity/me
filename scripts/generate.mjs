@@ -10,7 +10,7 @@ import { dirname, join } from "node:path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const { site, person, experience, earlier, skills, education, achievements } =
-  await import("../lib/data.ts");
+  await import("../src/shared/constants/content.constants.ts");
 
 /* ── /resume.json — JSON Resume schema v1.0.0 ────────────────────── */
 const work = [

@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { applyTheme, getTheme, nextTheme, type Theme } from "@/lib/theme";
-import { click } from "@/lib/click";
+import { applyTheme, getTheme, nextTheme, type Theme } from "@/modules/theme/theme.utils";
+import { click } from "@/shared/utils/click.utils";
 
 const LABEL: Record<Theme, string> = {
   light: "light",

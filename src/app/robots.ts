@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/data";
+import { site } from "@/shared/constants/content.constants";
 
 /**
  * Absence of a rule already permits crawling — `Allow:` is permissive-only.

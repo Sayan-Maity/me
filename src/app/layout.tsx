@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import { site, person } from "@/lib/data";
-import { buildGraph } from "@/lib/schema";
+import { site, person } from "@/shared/constants/content.constants";
+import { buildGraph } from "@/shared/utils/schema.utils";
 import "./globals.css";
 
 // Self-hosted at build time by next/font: no render-blocking request to

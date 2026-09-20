@@ -4,11 +4,11 @@ import {
   earlier,
   skillGroups,
   achievements,
-} from "@/lib/data";
-import { CommandPalette } from "./command-palette";
-import { ThemeToggle } from "./theme-toggle";
-import { Key } from "./key";
-import { ConsoleEgg } from "./console-egg";
+} from "@/shared/constants/content.constants";
+import { CommandPalette } from "@/modules/palette/components/CommandPalette";
+import { ThemeToggle } from "@/modules/theme/components/ThemeToggle";
+import { Key } from "@/shared/components/Key";
+import { ConsoleEgg } from "@/modules/console/components/ConsoleEgg";
 
 export default function Page() {
   return (
