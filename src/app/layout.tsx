@@ -45,10 +45,19 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.title,
     locale: "en_US",
-    images: [{ url: "/og.jpg", width: 600, height: 600, alt: person.name }],
+    images: [
+      // 1200x630 is what Slack, LinkedIn and X expect; a square renders as
+      // a small thumbnail instead of a full-width card.
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: `${person.name} — ${person.tagline}`,
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: site.title,
     description: site.description,
     images: ["/og.jpg"],
