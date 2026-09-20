@@ -1,42 +1,69 @@
 @import "tailwindcss";
 
-/* Tailwind v4 is CSS-first: the design system lives here, not in a JS config.
-   One mono family, near-black/near-white, one accent. Nothing else. */
+/* ─────────────────────────────────────────────────────────────────
+   Design tokens. Every colour on the site is defined here and nowhere
+   else — components reference them by name (text-muted, bg-bg) or via
+   var(--color-*). No literal hex belongs outside this block.
+
+   Tailwind v4 is CSS-first, so this replaces a tailwind.config.js.
+   ───────────────────────────────────────────────────────────────── */
+
+/* Raw palette. Named by role, not by hue, so a theme swap is local. */
+:root {
+  --palette-light-bg: #fcfcfc;
+  --palette-light-fg: #16161a;
+  --palette-light-muted: #4a4a55;
+  --palette-light-faint: #70707b;
+  --palette-light-accent: #2f4fd0;
+  --palette-light-rule: #e6e6ea;
+  --palette-light-grid: #e4e4e7;
+
+  --palette-dark-bg: #0e0e11;
+  --palette-dark-fg: #ededf0;
+  --palette-dark-muted: #a8a8b3;
+  --palette-dark-faint: #84848f;
+  --palette-dark-accent: #8ea3ff;
+  --palette-dark-rule: #232329;
+  --palette-dark-grid: #222225;
+}
+
+/* Semantic tokens, light by default. Tailwind generates utilities from
+   these: --color-muted becomes text-muted, bg-muted, border-muted. */
 @theme {
-  --color-bg: #fcfcfc;
-  --color-fg: #16161a;
-  --color-muted: #4a4a55;
-  --color-faint: #70707b;
-  --color-accent: #2f4fd0;
-  --color-rule: #e6e6ea;
-  --color-grid: #e4e4e7;
+  --color-bg: var(--palette-light-bg);
+  --color-fg: var(--palette-light-fg);
+  --color-muted: var(--palette-light-muted);
+  --color-faint: var(--palette-light-faint);
+  --color-accent: var(--palette-light-accent);
+  --color-rule: var(--palette-light-rule);
+  --color-grid: var(--palette-light-grid);
 
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
-/* Dark palette. Applied either by explicit choice (html.dark, set by the
-   inline script in layout.tsx) or by system preference when the user has
-   not chosen — hence both selectors. */
+/* Dark values, declared once and applied through two selectors: an
+   explicit choice (html.dark, set by the inline script in layout.tsx)
+   and the system preference when the user has not chosen. */
 @layer theme {
   html.dark {
-    --color-bg: #0e0e11;
-    --color-fg: #ededf0;
-    --color-muted: #a8a8b3;
-    --color-faint: #84848f;
-    --color-accent: #8ea3ff;
-    --color-rule: #232329;
-    --color-grid: #222225;
+    --color-bg: var(--palette-dark-bg);
+    --color-fg: var(--palette-dark-fg);
+    --color-muted: var(--palette-dark-muted);
+    --color-faint: var(--palette-dark-faint);
+    --color-accent: var(--palette-dark-accent);
+    --color-rule: var(--palette-dark-rule);
+    --color-grid: var(--palette-dark-grid);
   }
 
   @media (prefers-color-scheme: dark) {
     html:not(.light) {
-      --color-bg: #0e0e11;
-      --color-fg: #ededf0;
-      --color-muted: #a8a8b3;
-      --color-faint: #84848f;
-      --color-accent: #8ea3ff;
-      --color-rule: #232329;
-      --color-grid: #222225;
+      --color-bg: var(--palette-dark-bg);
+      --color-fg: var(--palette-dark-fg);
+      --color-muted: var(--palette-dark-muted);
+      --color-faint: var(--palette-dark-faint);
+      --color-accent: var(--palette-dark-accent);
+      --color-rule: var(--palette-dark-rule);
+      --color-grid: var(--palette-dark-grid);
     }
   }
 }

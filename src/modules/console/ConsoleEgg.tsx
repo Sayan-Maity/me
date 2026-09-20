@@ -9,8 +9,15 @@ import { person, site, skillGroups } from "@/shared/constants/content.constants"
  */
 export function ConsoleEgg() {
   useEffect(() => {
-    const dim = "color:#8f8f9a";
-    const bold = "color:#8ea3ff;font-weight:600";
+    // Read the live token values so console output follows the theme and
+    // cannot go stale when the palette changes.
+    const token = (name: string) =>
+      getComputedStyle(document.documentElement)
+        .getPropertyValue(name)
+        .trim() || "inherit";
+
+    const dim = `color:${token("--color-muted")}`;
+    const bold = `color:${token("--color-accent")};font-weight:600`;
 
     // Real numbers from the Navigation Timing API.
     const nav = performance.getEntriesByType(
