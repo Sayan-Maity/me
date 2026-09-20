@@ -20,7 +20,7 @@ export default function Page() {
         Skip to content
       </a>
 
-      <div className="mx-auto max-w-[76ch] px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
+      <div className="mx-auto max-w-[76ch] px-6 py-16 sm:px-8 sm:py-24 lg:py-28">
         <main id="main">
           {/* ── Header ─────────────────────────────────────────────── */}
           <header data-rise="1">
