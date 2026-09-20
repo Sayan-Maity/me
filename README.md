@@ -1,4 +1,4 @@
-# Portfolio
+# sayanmaity.in
 
 Statically-exported Next.js site. Content is baked into HTML at build time so
 that AI crawlers — none of which execute JavaScript — can read it.
@@ -19,31 +19,52 @@ npm start        # serve the built output locally
 
 ## Editing content
 
-Everything lives in [`lib/data.ts`](lib/data.ts). The rendered page, the JSON-LD
-graph, `/resume.json` and `/llms.txt` all derive from it, so they cannot drift
-apart. Edit that one file and rebuild.
+Everything lives in
+[`src/shared/constants/content.constants.ts`](src/shared/constants/content.constants.ts).
+The rendered page, the JSON-LD graph, `/resume.json` and `/llms.txt` all derive
+from it, so they cannot drift apart. Edit that one file and rebuild.
+
+Colours are the same story: every token is defined in
+[`src/app/globals.css`](src/app/globals.css) and nothing else contains a literal
+hex value.
 
 ## Structure
 
-| Path | Purpose |
+```
+src/
+  app/                      routing only — layout, page, robots, sitemap, css
+  modules/
+    palette/                ⌘K command palette (component + hook + constants)
+    theme/                  light / dark / system toggle
+    console/                console easter egg
+  shared/
+    components/             Key, DeferredClient
+    constants/              content.constants.ts — all site content
+    utils/                  schema (JSON-LD), click (Web Audio)
+scripts/generate.mjs        emits public/resume.json and public/llms.txt
+```
+
+## Machine-readable endpoints
+
+| Path | What it is |
 |---|---|
-| `lib/data.ts` | Single source of truth for all content |
-| `lib/schema.ts` | JSON-LD `@graph` (Person + WebSite) |
-| `app/page.tsx` | The page — server-rendered, ships no JS |
-| `app/command-palette.tsx` | ⌘K palette — the only client component |
-| `app/robots.ts`, `app/sitemap.ts` | Generated at build time |
-| `scripts/generate.mjs` | Emits `public/resume.json` and `public/llms.txt` |
+| `/llms.txt` | Full content as markdown, llms.txt v2 format |
+| `/resume.json` | JSON Resume schema v1.0.0 |
+| `/robots.txt` | Explicitly allows the major AI crawlers |
+| `/sitemap.xml` | Generated at build time |
+
+JSON-LD (`Person` + `WebSite`) is embedded in the page head.
 
 ## The acceptance test
 
 The previous site returned an empty `<div id="root">`. This one must not:
 
 ```sh
-curl -s https://<site> | grep -o "Sayan" | wc -l    # > 0
-curl -iL -A 'Claude-User/1.0' https://<site>        # full content, no JS needed
+curl -s https://sayanmaity.in | grep -o "Sayan" | wc -l    # > 0
+curl -iL -A 'Claude-User/1.0' https://sayanmaity.in        # full content, no JS
 ```
 
 ## TODO
 
-- Add `public/resume.pdf` (linked from Contact and the ⌘K palette).
-- Set the real domain in `site.url` in `lib/data.ts` before deploying.
+- Add `public/resume.pdf` — linked from Contact and the ⌘K palette, currently 404s.
+- Point the `sayanmaity.in` domain at the Vercel deployment.
