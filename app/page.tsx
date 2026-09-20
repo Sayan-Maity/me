@@ -106,7 +106,12 @@ export default function Page() {
           <Section title="Achievements">
             <ul className="space-y-3">
               {achievements.map((a) => (
-                <li key={a.text} className="flex gap-x-4 text-muted">
+                <li key={a.text} className="flex gap-x-3 text-muted">
+                  {/* Marker in its own column so wrapped lines indent under
+                      the text rather than under the chevron. */}
+                  <span aria-hidden="true" className="shrink-0 text-faint">
+                    &gt;
+                  </span>
                   <span className="min-w-0 flex-1">
                     {a.text}
                     {a.certificate && (
