@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { applyTheme, getTheme, nextTheme, type Theme } from "@/lib/theme";
+import { click } from "@/lib/click";
 
 const LABEL: Record<Theme, string> = {
   light: "light",
@@ -24,7 +25,11 @@ export function ThemeToggle() {
   return (
     <button
       type="button"
-      onClick={() => theme && applyTheme(nextTheme(theme))}
+      onClick={() => {
+        if (!theme) return;
+        click();
+        applyTheme(nextTheme(theme));
+      }}
       className="text-faint transition-colors hover:text-accent"
       aria-label={
         theme ? `Theme: ${LABEL[theme]}. Click to change.` : "Change theme"

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { person } from "@/lib/data";
 import { applyTheme, getTheme, nextTheme } from "@/lib/theme";
 import { Key } from "./key";
+import { click } from "@/lib/click";
 
 type Item = {
   label: string;
@@ -77,6 +78,7 @@ export function CommandPalette() {
       if (el && (el.tagName === "INPUT" || el.isContentEditable)) return;
       if (e.code === "KeyT") {
         e.preventDefault();
+        click();
         applyTheme(nextTheme(getTheme()));
       }
     };
@@ -104,6 +106,7 @@ export function CommandPalette() {
     }
     if (e.key === "Enter" && results[active]) {
       e.preventDefault();
+      click();
       results[active].run();
       close();
     }
@@ -144,6 +147,7 @@ export function CommandPalette() {
                 aria-selected={i === active}
                 onMouseEnter={() => setActive(i)}
                 onClick={() => {
+                  click();
                   item.run();
                   close();
                 }}
