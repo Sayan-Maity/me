@@ -4,6 +4,7 @@ import {
   earlier,
   skillGroups,
   achievements,
+  personal,
 } from "@/shared/constants/content.constants";
 import { ThemeToggle } from "@/modules/theme/components/ThemeToggle";
 import { DeferredClient } from "@/shared/components/DeferredClient";
@@ -22,11 +23,21 @@ export default function Page() {
       <div className="mx-auto max-w-[76ch] px-5 py-16 sm:px-8 sm:py-24 lg:py-28">
         <main id="main">
           {/* ── Header ─────────────────────────────────────────────── */}
-          <header>
+          <header data-rise="1">
             <h1 className="text-[24px] font-medium tracking-tight">
               {person.name}
             </h1>
             <p className="mt-1 text-[13px] text-faint">{person.aka}</p>
+            {/* Explicit dimensions so the header never shifts while it loads. */}
+            <img
+              src={person.photo}
+              alt={`${person.name}, ${person.role}`}
+              width={72}
+              height={72}
+              loading="eager"
+              decoding="async"
+              className="mt-5 h-[72px] w-[72px] rounded-sm object-cover"
+            />
             <p className="mt-5 text-muted">{person.tagline}</p>
             <p className="mt-4 text-faint">
               {person.role} · {person.location}
@@ -34,7 +45,7 @@ export default function Page() {
           </header>
 
           {/* ── Experience ─────────────────────────────────────────── */}
-          <Section title="Experience">
+          <Section title="Experience" rise={2}>
             {experience.map((job) => (
               <div key={job.company} className="mb-10 last:mb-0">
                 <h3 className="text-[15px] font-medium">
@@ -81,6 +92,7 @@ export default function Page() {
 
           {/* ── Previously ─────────────────────────────────────────── */}
           <Section
+            rise={3}
             title="Previously"
             note="internships and freelance, 2023—24"
           >
@@ -102,7 +114,7 @@ export default function Page() {
           </Section>
 
           {/* ── Achievements ───────────────────────────────────────── */}
-          <Section title="Achievements">
+          <Section title="Achievements" rise={4}>
             <ul className="space-y-3">
               {achievements.map((a) => (
                 <li key={a.text} className="flex gap-x-3 text-muted">
@@ -123,7 +135,7 @@ export default function Page() {
                           // Three links read "certificate"; the label tells
                           // assistive tech which one this is.
                           aria-label={`Certificate — ${a.text}`}
-                          className="text-faint underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                          className="text-faint underline decoration-transparent underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
                         >
                           certificate
                         </a>
@@ -139,7 +151,7 @@ export default function Page() {
           </Section>
 
           {/* ── Skills ─────────────────────────────────────────────── */}
-          <Section title="Stack">
+          <Section title="Stack" rise={5}>
             <ul className="space-y-2">
               {skillGroups.map((g) => (
                 <li key={g.label} className="flex flex-wrap gap-x-4">
@@ -152,8 +164,42 @@ export default function Page() {
             </ul>
           </Section>
 
+          {/* ── Outside work ───────────────────────────────────────── */}
+          <Section title="Outside work" rise={6}>
+            {personal.before.map((para, i) => (
+              <p key={para} className={i ? "mt-4 text-muted" : "text-muted"}>
+                {para}
+              </p>
+            ))}
+
+            <p className="mt-6 text-muted">{personal.quote.lead}</p>
+
+            {/* The bar is its own element so it can be rounded — a CSS
+                border cannot take a radius independently of the box. */}
+            <figure className="mt-4 flex gap-x-5">
+              <div
+                aria-hidden="true"
+                className="w-[3px] shrink-0 rounded-full bg-faint"
+              />
+              <div>
+                <blockquote className="italic text-muted">
+                  &ldquo;{personal.quote.text}&rdquo;
+                </blockquote>
+                <figcaption className="mt-2 text-[13px] text-faint">
+                  ——— {personal.quote.author}
+                </figcaption>
+              </div>
+            </figure>
+
+            {personal.after.map((para) => (
+              <p key={para} className="mt-8 text-muted">
+                {para}
+              </p>
+            ))}
+          </Section>
+
           {/* ── Contact ────────────────────────────────────────────── */}
-          <Section title="Contact">
+          <Section title="Contact" rise={7}>
             <ul className="space-y-1.5">
               <ContactLink href={`mailto:${person.email}`} label="Email">
                 {person.email}
@@ -193,17 +239,26 @@ export default function Page() {
 function Section({
   title,
   note,
+  rise,
   children,
 }: {
   title: string;
+  /** Stagger position for the entrance animation. */
+  rise?: number;
   /** Optional annotation, set beside the heading rather than below it so
       the section still opens straight into its content. */
   note?: string;
   children: React.ReactNode;
 }) {
-  const id = title.toLowerCase();
+  // Spaces are not valid in a fragment identifier.
+  const id = title.toLowerCase().replace(/\s+/g, "-");
   return (
-    <section id={id} aria-labelledby={`${id}-heading`} className="mt-16">
+    <section
+      id={id}
+      aria-labelledby={`${id}-heading`}
+      data-rise={rise}
+      className="mt-16"
+    >
       <h2
         id={`${id}-heading`}
         className="mb-5 flex flex-wrap items-baseline gap-x-3 text-[13px] uppercase tracking-[0.2em] text-faint"

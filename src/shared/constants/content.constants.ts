@@ -22,6 +22,8 @@ export const person = {
   /** Rendered under the name. Deliberately not part of the JSON-LD `name`
       field — agents should get "Sayan Maity" clean. */
   aka: "(people call me syooooon)",
+  /** Square portrait rendered in the header. Replace public/portrait.jpg. */
+  photo: "/portrait.jpg",
   tagline:
     "I build the product surfaces people use AI agents through. The interfaces, the real time systems that keep them fast, and the design that makes them feel considered.",
   links: {
@@ -63,11 +65,10 @@ export const experience: readonly Job[] = [
         end: null,
         dates: "May 2025 — Present",
         highlights: [
-          "Built the Agents feature end to end, across frontend and backend: the API layer, listing with search and filter, detail pages, the creation flow, tools-access and dataset-grant management, and sharing. On the backend, added task-count endpoints, agent-aware task attribution, and permission-aware bulk actions.",
-          "Designed the real-time task system — an SSE event pipeline (parse, guard, classify, resolve, plan) feeding a normalized task-list store, so task state stays live and consistent across every surface.",
-          "Led the app-wide dark mode rollout: semantic color tokens, a refreshed palette, and a migration path that let the legacy product stay light-mode while the new product went fully themed.",
-          "Built the Playwright end-to-end test infrastructure and the staging and production auto-deploy pipelines; integrated AWS Secrets Manager; cut build times and resolved memory-pressure failures; drove supply-chain security response and added automated audit checks with Slack alerting.",
-          "Led the AG Grid to TanStack Table migration — column resizing, drag-reordering, virtualization and pinned panes — shipped as a sequenced multi-part rollout.",
+          "Built the Agents product end to end: the API layer, creation and permissions flows, tools and dataset access, and sharing.",
+          "Designed the real-time task system: an SSE pipeline feeding a normalized store, so task state stays live across every surface.",
+          "Led the app-wide dark mode rollout, with a migration path that let the legacy product stay light while the new one went themed.",
+          "Built the Playwright E2E infrastructure and the staging and production deploy pipelines; cut build times and fixed memory-pressure failures.",
         ],
       },
       {
@@ -77,12 +78,9 @@ export const experience: readonly Job[] = [
         end: "2025-04",
         dates: "Sep 2024 — Apr 2025",
         highlights: [
-          "Shipped Audit Trails.",
-          "Built the display-config rules engine, including column-hiding logic driven by display rules.",
-          "Added multi-dataset support and toggle-driven multi-header configuration.",
-          "Built a shared FileUploaderWrapper component adopted across the app.",
-          "Added lazy loading across multiple APIs to cut initial page load.",
-          "Shipped three to four versions of Zamp's marketing website, iterating on design and content as the product positioning evolved.",
+          "Shipped Audit Trails and the display-config rules engine driving column visibility.",
+          "Added multi-dataset support and a shared file-upload component adopted across the app.",
+          "Shipped several versions of Zamp's marketing site as the product positioning changed.",
         ],
       },
     ],
@@ -100,11 +98,9 @@ export const experience: readonly Job[] = [
         end: "2024-09",
         dates: "Jul 2024 — Sep 2024",
         highlights: [
-          "Implemented domain redirection with SIWE authentication, serving over 5K monthly active users.",
-          "Improved Next.js app performance by 40–50%, optimising LCP, FCP and Speed Index against Lighthouse.",
-          "Built Garden-book, a component library in React, TypeScript and Tailwind — 20+ reusable components adopted across four projects, documented and tested through Storybook.",
-          "Built the Quest page frontend end to end, with Zustand for state management.",
-          "Refactored the WBTC-Garden landing page and built animated components in Garden-kiosk and WBTC-Garden with GSAP.",
+          "Implemented domain redirection with SIWE authentication, serving 5K+ monthly active users.",
+          "Improved Next.js performance 40–50%, optimising LCP, FCP and Speed Index against Lighthouse.",
+          "Built Garden-book: 20+ reusable React components adopted across four projects, documented in Storybook.",
         ],
       },
     ],
@@ -151,6 +147,23 @@ export const earlier: readonly EarlyRole[] = [
     dates: "2023",
   },
 ];
+
+/** Personal section. Deliberately short — two paragraphs, no lists. */
+export const personal = {
+  /** Sits before the quote. */
+  before: [
+    "I have been investing in Indian equities since college. It started with Rich Dad Poor Dad and turned into a habit of reading about markets and behaviour.",
+  ],
+  quote: {
+    lead: "A line I keep coming back to:",
+    text: "The art of being wise is knowing what to overlook.",
+    author: "William James",
+  },
+  /** Sits after the quote. */
+  after: [
+    "Otherwise I am outdoors. I love playing in teams, football mostly. Sometimes I plan a trek and disappear into the hills for a few days.",
+  ],
+} as const;
 
 export type SkillGroup = { label: string; items: readonly string[] };
 

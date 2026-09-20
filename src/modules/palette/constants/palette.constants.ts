@@ -20,6 +20,7 @@ export const PALETTE_ITEMS: PaletteItem[] = [
   { label: "Previously", hint: "Section", run: jump("previously") },
   { label: "Achievements", hint: "Section", run: jump("achievements") },
   { label: "Stack", hint: "Section", run: jump("stack") },
+  { label: "Outside work", hint: "Section", run: jump("outside-work") },
   { label: "Contact", hint: "Section", run: jump("contact") },
   {
     label: "Copy email",

@@ -16,6 +16,11 @@ const CommandPalette = dynamic(
   { ssr: false },
 );
 
+const ScrollReveal = dynamic(
+  () => import("@/modules/reveal/ScrollReveal").then((m) => m.ScrollReveal),
+  { ssr: false },
+);
+
 const ConsoleEgg = dynamic(
   () => import("@/modules/console/ConsoleEgg").then((m) => m.ConsoleEgg),
   { ssr: false },
@@ -26,6 +31,7 @@ export function DeferredClient() {
     <>
       <CommandPalette />
       <ConsoleEgg />
+      <ScrollReveal />
     </>
   );
 }

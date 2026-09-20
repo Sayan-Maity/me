@@ -137,6 +137,40 @@ body::before {
   );
 }
 
+/* Scroll-triggered entrance. Sections rise into place as they enter the
+   viewport rather than all at once on load.
+
+   Content is visible by default — the animation only applies once the
+   `reveal-ready` class is set, which happens after JS confirms it can
+   observe. Without JS (every AI crawler) nothing is ever hidden. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(48px);
+  }
+  /* Reach full opacity early so the remaining travel is visible as motion
+     rather than being masked by the fade. */
+  50% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal-ready [data-rise] {
+  opacity: 0;
+}
+
+/* opacity:1 is set directly rather than left to the animation's fill mode,
+   so the end state holds even if the animation never runs. */
+.reveal-ready [data-rise].is-visible {
+  opacity: 1;
+  animation: rise 700ms cubic-bezier(0.16, 0.6, 0.3, 1);
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
