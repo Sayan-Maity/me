@@ -120,6 +120,9 @@ export default function Page() {
                           href={a.certificate}
                           target="_blank"
                           rel="noopener noreferrer"
+                          // Three links read "certificate"; the label tells
+                          // assistive tech which one this is.
+                          aria-label={`Certificate — ${a.text}`}
                           className="text-faint underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
                         >
                           certificate
@@ -207,7 +210,7 @@ function Section({
       >
         {title}
         {note && (
-          <span className="text-[13px] normal-case tracking-normal text-faint/70">
+          <span className="text-[13px] normal-case tracking-normal text-faint">
             ({note})
           </span>
         )}
