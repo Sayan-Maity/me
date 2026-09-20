@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/icon-32.png", sizes: "32x32", type: "image/png" }],
-    apple: [{ url: "/icon-180.png", sizes: "180x180" }],
+    apple: [{ url: "/icon-180.jpg", sizes: "180x180" }],
   },
   authors: [{ name: person.name, url: site.url }],
   creator: person.name,
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: site.title,
     locale: "en_US",
-    images: [{ url: "/sayan.png", width: 1280, height: 1280, alt: person.name }],
+    images: [{ url: "/og.jpg", width: 600, height: 600, alt: person.name }],
   },
   twitter: {
     card: "summary",
     title: site.title,
     description: site.description,
-    images: ["/sayan.png"],
+    images: ["/og.jpg"],
   },
   robots: {
     index: true,

@@ -22,7 +22,7 @@ export function buildGraph() {
         "@id": `${site.url}/#person`,
         name: person.name,
         url: site.url,
-        image: `${site.url}/sayan.png`,
+        image: `${site.url}/og.jpg`,
         email: `mailto:${person.email}`,
         jobTitle: person.role,
         description: person.tagline,
