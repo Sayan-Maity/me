@@ -8,7 +8,7 @@ import {
 import { CommandPalette } from "@/modules/palette/components/CommandPalette";
 import { ThemeToggle } from "@/modules/theme/components/ThemeToggle";
 import { Key } from "@/shared/components/Key";
-import { ConsoleEgg } from "@/modules/console/components/ConsoleEgg";
+import { ConsoleEgg } from "@/modules/console/ConsoleEgg";
 
 export default function Page() {
   return (
