@@ -5,10 +5,9 @@ import {
   skillGroups,
   achievements,
 } from "@/shared/constants/content.constants";
-import { CommandPalette } from "@/modules/palette/components/CommandPalette";
 import { ThemeToggle } from "@/modules/theme/components/ThemeToggle";
+import { DeferredClient } from "@/shared/components/DeferredClient";
 import { Key } from "@/shared/components/Key";
-import { ConsoleEgg } from "@/modules/console/ConsoleEgg";
 
 export default function Page() {
   return (
@@ -183,8 +182,7 @@ export default function Page() {
         </footer>
       </div>
 
-      <CommandPalette />
-      <ConsoleEgg />
+      <DeferredClient />
     </>
   );
 }
