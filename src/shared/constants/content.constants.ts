@@ -191,7 +191,10 @@ export const achievements: readonly Achievement[] = [
 ];
 
 export const skillGroups: readonly SkillGroup[] = [
-  { label: "Core", items: ["React", "Next.js", "TypeScript", "JavaScript"] },
+  {
+    label: "Core",
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "C++"],
+  },
   { label: "Styling", items: ["Tailwind CSS", "shadcn/ui", "CSS"] },
   { label: "State", items: ["Zustand", "Redux", "MobX"] },
   {
