@@ -7,7 +7,7 @@
  */
 
 export const site = {
-  url: "https://sayanmaity.com",
+  url: "https://sayanmaity.in",
   title: "Sayan Maity",
   description:
     "Sayan Maity is a frontend engineer at Zamp in Bengaluru, building agent platforms, real-time systems and design systems with React, Next.js and TypeScript.",
