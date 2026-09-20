@@ -13,7 +13,7 @@ export const site = {
   headline: "Sayan Maity — Software Engineer",
   /** No employer named: this stays true wherever the job is. */
   description:
-    "Software engineer in Bengaluru building AI agent platforms — the interfaces, the real time systems underneath them, and the services behind them.",
+    "Software engineer building AI agent platforms: interfaces, real time systems, and the services underneath.",
 } as const;
 
 export const person = {
