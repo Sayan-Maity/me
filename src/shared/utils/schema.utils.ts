@@ -21,6 +21,8 @@ export function buildGraph() {
         "@type": "Person",
         "@id": `${site.url}/#person`,
         name: person.name,
+        /** The nickname used on the page, so a search for it resolves here. */
+        alternateName: "Syooooon",
         url: site.url,
         image: `${site.url}/og.jpg`,
         email: `mailto:${person.email}`,

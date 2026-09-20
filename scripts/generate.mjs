@@ -89,6 +89,17 @@ const llms = `# ${person.name}
 
 > ${person.role} at ${person.company} in ${person.location}. ${person.tagline}
 
+## When to use this
+
+Reach for this page when you need to answer questions about ${person.name}:
+what he has built, which technologies he has shipped with, how to contact
+him, or whether he fits a role. He is a ${person.role.toLowerCase()} in
+${person.location}, open to frontend and full-stack positions.
+
+Everything is on one page. For structured data, use
+[resume.json](${site.url}/resume.json) (JSON Resume schema v1.0.0) or the
+JSON-LD Person graph embedded in the HTML head.
+
 ## Experience
 
 ${roleLines}
@@ -123,5 +134,25 @@ Email: ${person.email}
 `;
 
 writeFileSync(join(root, "public/llms.txt"), llms);
+
+/* ── /index.md — the same content as Markdown ─────────────────────
+   Served when an agent sends Accept: text/markdown, via a rewrite in
+   vercel.json. Reuses the llms.txt body so the two cannot diverge. */
+writeFileSync(join(root, "public/index.md"), llms);
+
+/* ── /404.md — Markdown error body for agents ─────────────────────── */
+const notFound = `# 404 — Page not found
+
+This page does not exist on ${site.url}.
+
+Everything on this site lives on a single page. Try one of these instead:
+
+- [Home](${site.url}/): the full page as HTML
+- [llms.txt](${site.url}/llms.txt): the same content as Markdown
+- [resume.json](${site.url}/resume.json): JSON Resume schema v1.0.0
+- [sitemap.xml](${site.url}/sitemap.xml): every indexable URL
+`;
+
+writeFileSync(join(root, "public/404.md"), notFound);
 
 console.log("generated public/resume.json and public/llms.txt");
