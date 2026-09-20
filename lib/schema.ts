@@ -1,4 +1,11 @@
-import { person, site, experience, skills, education } from "./data";
+import {
+  person,
+  site,
+  experience,
+  skills,
+  education,
+  achievements,
+} from "./data";
 
 /**
  * JSON-LD @graph. Derived entirely from lib/data.ts so it can never drift
@@ -33,6 +40,7 @@ export function buildGraph() {
           "@type": "CollegeOrUniversity",
           name: education.school,
         },
+        award: achievements.map((a) => a.text),
         knowsAbout: skills,
         sameAs: [person.links.github, person.links.linkedin, person.links.npm],
         hasOccupation: {

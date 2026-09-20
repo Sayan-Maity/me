@@ -3,6 +3,7 @@ import {
   experience,
   earlier,
   skillGroups,
+  achievements,
 } from "@/lib/data";
 import { CommandPalette } from "./command-palette";
 import { ThemeToggle } from "./theme-toggle";
@@ -95,6 +96,35 @@ export default function Page() {
                   </span>
                   <span className="shrink-0 text-[13px] text-faint tabular-nums">
                     {e.dates}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Section>
+
+          {/* ── Achievements ───────────────────────────────────────── */}
+          <Section title="Achievements">
+            <ul className="space-y-3">
+              {achievements.map((a) => (
+                <li key={a.text} className="flex gap-x-4 text-muted">
+                  <span className="min-w-0 flex-1">
+                    {a.text}
+                    {a.certificate && (
+                      <>
+                        {" "}
+                        <a
+                          href={a.certificate}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-faint underline decoration-rule underline-offset-4 transition-colors hover:text-accent hover:decoration-accent"
+                        >
+                          certificate
+                        </a>
+                      </>
+                    )}
+                  </span>
+                  <span className="shrink-0 text-[13px] text-faint tabular-nums">
+                    {a.dates}
                   </span>
                 </li>
               ))}

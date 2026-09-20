@@ -145,6 +145,27 @@
       ]
     }
   ],
+  "awards": [
+    {
+      "title": "Won the Best-AI hack title in the Diversion hackathon organized by @ACM-IEM (600+ participants)",
+      "date": "2024",
+      "url": "https://drive.google.com/file/d/1h5U7AGL2P3hVvZrTnNn_MtjAPoCsGqXy/view"
+    },
+    {
+      "title": "Secured 3rd position at Interrupt Innovate Iterate hackathon by @IIIT Allahabad (500+ participants)",
+      "date": "2023",
+      "url": "https://drive.google.com/file/d/1KhpEVulty430_LbtwdGf84HEC7oD2q9x/view"
+    },
+    {
+      "title": "Secured 2nd rank out of 600+ students in intraclass Coding Competition @Hack Coders in our college UEM",
+      "date": "2023"
+    },
+    {
+      "title": "Secured Global rank 4888th out of 21000+ participants in Google Kickstart 2022 Round D competition",
+      "date": "2022",
+      "url": "https://drive.google.com/file/d/1GnLOEoxs-Y2uB6emKkXTjW60UCyXjIl3/view"
+    }
+  ],
   "meta": {
     "canonical": "https://sayanmaity.com/resume.json",
     "version": "3.0.0"

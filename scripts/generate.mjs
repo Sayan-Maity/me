@@ -9,7 +9,7 @@ import { dirname, join } from "node:path";
 
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const { site, person, experience, earlier, skills, education } =
+const { site, person, experience, earlier, skills, education, achievements } =
   await import("../lib/data.ts");
 
 /* ── /resume.json — JSON Resume schema v1.0.0 ────────────────────── */
@@ -62,6 +62,11 @@ const resume = {
     },
   ],
   skills: [{ name: "Frontend Engineering", keywords: [...skills] }],
+  awards: achievements.map((a) => ({
+    title: a.text,
+    date: a.dates,
+    ...(a.certificate ? { url: a.certificate } : {}),
+  })),
   meta: { canonical: `${site.url}/resume.json`, version: "3.0.0" },
 };
 
@@ -91,6 +96,10 @@ ${roleLines}
 Previously — frontend internships and freelance work, 2023—24:
 
 ${earlier.map((e) => `- **${e.company}** (${e.dates}): ${e.note}`).join("\n")}
+
+## Achievements
+
+${achievements.map((a) => `- ${a.text} (${a.dates})${a.certificate ? ` — [certificate](${a.certificate})` : ""}`).join("\n")}
 
 ## Stack
 

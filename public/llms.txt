@@ -32,6 +32,13 @@ Previously — frontend internships and freelance work, 2023—24:
 - **Listnr** (2023): Cut page load 40% with lazy loading across the app
 - **Desi QnA** (2023): Taught 20+ hours of frontend curriculum
 
+## Achievements
+
+- Won the Best-AI hack title in the Diversion hackathon organized by @ACM-IEM (600+ participants) (2024) — [certificate](https://drive.google.com/file/d/1h5U7AGL2P3hVvZrTnNn_MtjAPoCsGqXy/view)
+- Secured 3rd position at Interrupt Innovate Iterate hackathon by @IIIT Allahabad (500+ participants) (2023) — [certificate](https://drive.google.com/file/d/1KhpEVulty430_LbtwdGf84HEC7oD2q9x/view)
+- Secured 2nd rank out of 600+ students in intraclass Coding Competition @Hack Coders in our college UEM (2023)
+- Secured Global rank 4888th out of 21000+ participants in Google Kickstart 2022 Round D competition (2022) — [certificate](https://drive.google.com/file/d/1GnLOEoxs-Y2uB6emKkXTjW60UCyXjIl3/view)
+
 ## Stack
 
 React, Next.js, TypeScript, JavaScript, Tailwind CSS, shadcn/ui, CSS, Zustand, Redux, MobX, Playwright, Selenium, Vitest, Storybook, Go, Node.js, Docker, Temporal, AWS S3, CloudFront, Secrets Manager, Cloudflare, GitHub Actions.

@@ -22,6 +22,7 @@ const open = (url: string) => () => window.open(url, "_blank", "noopener");
 const ITEMS: Item[] = [
   { label: "Experience", hint: "Section", run: jump("experience") },
   { label: "Previously", hint: "Section", run: jump("previously") },
+  { label: "Achievements", hint: "Section", run: jump("achievements") },
   { label: "Stack", hint: "Section", run: jump("stack") },
   { label: "Contact", hint: "Section", run: jump("contact") },
   {

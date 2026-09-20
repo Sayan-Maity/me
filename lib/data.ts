@@ -158,6 +158,38 @@ export type SkillGroup = { label: string; items: readonly string[] };
  * Grouped for the rendered page; `skills` below flattens it for JSON-LD
  * knowsAbout and resume.json, so the two can never drift apart.
  */
+export type Achievement = {
+  text: string;
+  dates: string;
+  /** Public certificate, where one exists. */
+  certificate?: string;
+};
+
+export const achievements: readonly Achievement[] = [
+  {
+    text: "Won the Best-AI hack title in the Diversion hackathon organized by @ACM-IEM (600+ participants)",
+    dates: "2024",
+    certificate:
+      "https://drive.google.com/file/d/1h5U7AGL2P3hVvZrTnNn_MtjAPoCsGqXy/view",
+  },
+  {
+    text: "Secured 3rd position at Interrupt Innovate Iterate hackathon by @IIIT Allahabad (500+ participants)",
+    dates: "2023",
+    certificate:
+      "https://drive.google.com/file/d/1KhpEVulty430_LbtwdGf84HEC7oD2q9x/view",
+  },
+  {
+    text: "Secured 2nd rank out of 600+ students in intraclass Coding Competition @Hack Coders in our college UEM",
+    dates: "2023",
+  },
+  {
+    text: "Secured Global rank 4888th out of 21000+ participants in Google Kickstart 2022 Round D competition",
+    dates: "2022",
+    certificate:
+      "https://drive.google.com/file/d/1GnLOEoxs-Y2uB6emKkXTjW60UCyXjIl3/view",
+  },
+];
+
 export const skillGroups: readonly SkillGroup[] = [
   { label: "Core", items: ["React", "Next.js", "TypeScript", "JavaScript"] },
   { label: "Styling", items: ["Tailwind CSS", "shadcn/ui", "CSS"] },
@@ -168,7 +200,7 @@ export const skillGroups: readonly SkillGroup[] = [
   },
   { label: "Backend", items: ["Go", "Node.js"] },
   {
-    label: "Tooling",
+    label: "Infra",
     items: [
       "Docker",
       "Temporal",
