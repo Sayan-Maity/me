@@ -30,7 +30,6 @@ export const person = {
     github: "https://github.com/Sayan-Maity",
     linkedin: "https://www.linkedin.com/in/sayan-maity-cr7",
     npm: "https://www.npmjs.com/package/sayan-ui",
-    resume: "/resume.pdf",
   },
 } as const;
 

@@ -55,8 +55,21 @@
     --color-grid: var(--palette-dark-grid);
   }
 
+  /* Dark applies by default and when explicitly chosen. */
+  html.dark {
+    --color-bg: var(--palette-dark-bg);
+    --color-fg: var(--palette-dark-fg);
+    --color-muted: var(--palette-dark-muted);
+    --color-faint: var(--palette-dark-faint);
+    --color-accent: var(--palette-dark-accent);
+    --color-rule: var(--palette-dark-rule);
+    --color-grid: var(--palette-dark-grid);
+  }
+
+  /* "system" genuinely follows the OS: dark only when the OS asks for it,
+     otherwise the light tokens from @theme apply. */
   @media (prefers-color-scheme: dark) {
-    html:not(.light) {
+    html.system {
       --color-bg: var(--palette-dark-bg);
       --color-fg: var(--palette-dark-fg);
       --color-muted: var(--palette-dark-muted);
@@ -70,6 +83,7 @@
 
 /* Let the browser render form controls and scrollbars to match. */
 html.dark { color-scheme: dark; }
+html.system { color-scheme: light dark; }
 html.light { color-scheme: light; }
 
 html {
@@ -181,7 +195,7 @@ body::before {
   }
   55%,
   100% {
-    opacity: 0.15;
+    opacity: 0;
   }
 }
 

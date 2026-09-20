@@ -122,8 +122,7 @@ ${education.degree}, ${education.school} — ${education.grade}.
 
 ## Links
 
-- [Résumé (JSON)](${site.url}/resume.json): machine-readable résumé, JSON Resume schema v1.0.0.
-- [Résumé (PDF)](${site.url}/resume.pdf): human-readable résumé.
+- [Résumé](${site.url}/resume.json): machine-readable résumé, JSON Resume schema v1.0.0.
 - [GitHub](${person.links.github}): source code and open-source work.
 - [LinkedIn](${person.links.linkedin}): professional profile.
 - [npm](${person.links.npm}): published packages.

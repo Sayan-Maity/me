@@ -213,9 +213,6 @@ export default function Page() {
               <ContactLink href={person.links.linkedin} label="LinkedIn">
                 sayan-maity-cr7
               </ContactLink>
-              <ContactLink href={person.links.resume} label="Résumé">
-                resume.pdf
-              </ContactLink>
             </ul>
           </Section>
         </main>

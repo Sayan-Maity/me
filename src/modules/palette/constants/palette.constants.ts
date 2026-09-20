@@ -30,11 +30,6 @@ export const PALETTE_ITEMS: PaletteItem[] = [
   { label: "GitHub", hint: "External", run: open(person.links.github) },
   { label: "LinkedIn", hint: "External", run: open(person.links.linkedin) },
   {
-    label: "Résumé",
-    hint: "PDF",
-    run: () => window.open(person.links.resume, "_blank", "noopener"),
-  },
-  {
     label: "Toggle theme",
     hint: "T",
     isKey: true,

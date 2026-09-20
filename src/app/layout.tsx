@@ -80,7 +80,7 @@ export default function RootLayout({
             flash of the wrong palette. Must stay inline and blocking. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light"){document.documentElement.classList.add(t)}}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"||t==="dark"||t==="system"?t:"dark")}catch(e){document.documentElement.classList.add("dark")}})()`,
           }}
         />
         <script
