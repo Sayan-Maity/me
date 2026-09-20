@@ -9,8 +9,11 @@
 export const site = {
   url: "https://sayanmaity.in",
   title: "Sayan Maity",
+  /** Shown as the headline in link previews and search results. */
+  headline: "Sayan Maity — Software Engineer",
+  /** No employer named: this stays true wherever the job is. */
   description:
-    "Sayan Maity is a frontend engineer at Zamp in Bengaluru, building agent platforms, real-time systems and design systems with React, Next.js and TypeScript.",
+    "Software engineer in Bengaluru building AI agent platforms — the interfaces, the real time systems underneath them, and the services behind them.",
 } as const;
 
 export const person = {

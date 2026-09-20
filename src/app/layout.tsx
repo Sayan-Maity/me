@@ -31,19 +31,19 @@ export const metadata: Metadata = {
   creator: person.name,
   keywords: [
     "Sayan Maity",
+    "software engineer",
     "frontend engineer",
     "React",
     "Next.js",
     "TypeScript",
-    "Zamp",
     "Bengaluru",
   ],
   openGraph: {
     type: "profile",
-    title: site.title,
+    title: site.headline,
     description: site.description,
     url: site.url,
-    siteName: site.title,
+    siteName: person.name,
     locale: "en_US",
     images: [
       // 1200x630 is what Slack, LinkedIn and X expect; a square renders as
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: site.title,
+    title: site.headline,
     description: site.description,
     images: ["/og.jpg"],
   },
