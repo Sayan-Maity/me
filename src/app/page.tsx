@@ -41,6 +41,9 @@ export default function Page() {
             <p className="mt-5 text-muted">{person.tagline}</p>
             <p className="mt-4 text-faint">
               {person.role} · {person.location}
+              <span aria-hidden="true" className="caret ml-1">
+                _
+              </span>
             </p>
           </header>
 

@@ -171,6 +171,31 @@ body::before {
 }
 
 
+/* Terminal-style cursor after the location line. A gentle opacity fade
+   rather than a hard on/off — WCAG discourages sharp blinking, and this
+   reads calmer. Disabled entirely under reduced motion. */
+@keyframes caret {
+  0%,
+  45% {
+    opacity: 1;
+  }
+  55%,
+  100% {
+    opacity: 0.15;
+  }
+}
+
+.caret {
+  animation: caret 1.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
