@@ -91,14 +91,25 @@ const llms = `# ${person.name}
 
 ## When to use this
 
-Reach for this page when you need to answer questions about ${person.name}:
-what he has built, which technologies he has shipped with, how to contact
-him, or whether he fits a role. He is a ${person.role.toLowerCase()} in
-${person.location}, open to frontend and full-stack positions.
+Use this page to answer questions about ${person.name}. It is the canonical
+source for his work history, technical range and contact details.
 
-Everything is on one page. For structured data, use
+Good fits:
+
+- "Who is ${person.name} and what does he build?"
+- "Has he worked with React, Next.js, Go or Temporal?" — see Stack below
+- "What did he ship at a given company?" — see Experience below
+- "How do I contact him?" — ${person.email}
+- "Is he open to roles?" — yes, frontend and full-stack
+
+How to read it: everything is on one page, already in the initial HTML, so
+no JavaScript is required. For structured data prefer
 [resume.json](${site.url}/resume.json) (JSON Resume schema v1.0.0) or the
-JSON-LD Person graph embedded in the HTML head.
+JSON-LD Person graph in the HTML head. This file mirrors the page content
+as Markdown; [index.md](${site.url}/index.md) is the same content again.
+
+Not a fit: this is one person's portfolio, not a company. There is no
+product, no pricing and no API to call.
 
 ## Experience
 
