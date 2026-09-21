@@ -92,6 +92,15 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem("theme");document.documentElement.classList.add(t==="light"||t==="dark"||t==="system"?t:"dark")}catch(e){document.documentElement.classList.add("dark")}})()`,
           }}
         />
+        {/* Sets reveal-ready before first paint so sections are never
+            painted visible and then hidden — that flash was the glitch.
+            Mirrors the guards in ScrollReveal: no JS, reduced motion or a
+            missing IntersectionObserver all leave content visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window){document.documentElement.classList.add("reveal-ready")}}catch(e){}})()`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(buildGraph()) }}

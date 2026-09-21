@@ -22,7 +22,9 @@ export function ScrollReveal() {
     ).matches;
     if (reduced || !("IntersectionObserver" in window)) return;
 
-    // Only hide once we know we can reveal again.
+    // reveal-ready is already set by the inline script in layout.tsx, before
+    // first paint. Adding it here is a no-op kept only so the class is
+    // present if that script was blocked.
     root.classList.add("reveal-ready");
 
     const io = new IntersectionObserver(
