@@ -29,15 +29,19 @@ export default function Page() {
             </h1>
             <p className="mt-1 text-[13px] text-faint">{person.aka}</p>
             {/* Explicit dimensions so the header never shifts while it loads. */}
-            <img
-              src={person.photo}
-              alt={`${person.name}, ${person.role}`}
-              width={72}
-              height={72}
-              loading="eager"
-              decoding="async"
-              className="mt-5 h-[72px] w-[72px] rounded-sm object-cover"
-            />
+            <picture>
+              <source srcSet="/portrait.webp" type="image/webp" />
+              <img
+                src={person.photo}
+                alt={`${person.name}, ${person.role}`}
+                width={72}
+                height={72}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                className="mt-5 h-18 w-18 rounded-sm object-cover"
+              />
+            </picture>
             <p className="mt-5 text-muted">{person.tagline}</p>
             <p className="mt-4 text-faint">
               {person.role} · {person.location}
